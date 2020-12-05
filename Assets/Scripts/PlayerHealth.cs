@@ -5,9 +5,10 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int damage = 15;
+    public bool isDead = false;
 
     public HealthBar healthBar;
-    public Animator animator;
+    private Animator animator;
 
     public static PlayerHealth instance;
     public void Awake()
@@ -53,9 +54,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        isDead = true;
         animator.SetBool("Dead", true);
 
-        //GameOverManager.instance.OnPlayerDeath();
         return;
     }
 }

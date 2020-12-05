@@ -10,10 +10,13 @@ public class GoblinSpells : MonoBehaviour
     private bool isFlipped = false;
     public bool timeToFight = false;
     public GameObject healthBar;
-    public int attackDamage = 15;
+    public int attackDamage;
+    EnemyHealth enemyHealth;
+    private bool isBusy = false;
 
     private void Awake()
     {
+        enemyHealth = GetComponent <EnemyHealth>();
         animator = GetComponent<Animator>();
         initialePosition = transform.position;
     }
@@ -25,16 +28,19 @@ public class GoblinSpells : MonoBehaviour
 
     public void Update()
     {
-        if (timeToFight)
+        if (target.gameObject.GetComponent<PlayerSpells>().turn == "Enemy" && enemyHealth.isDead == false && !isBusy)
         {
+            isBusy = true;
             Normal_Attack();
-            timeToFight = false;
         }
+        
             
     }
 
     IEnumerator Cr_Attack()
     {
+        // pour attendre que le joueur ai fini son sort
+        yield return new WaitForSeconds(0.5f);
 
         while (Mathf.Abs(transform.position.x - target.transform.position.x) > 2.5f)
         {
@@ -61,6 +67,8 @@ public class GoblinSpells : MonoBehaviour
         }
         Flip();
         healthBar.SetActive(true);
+        target.gameObject.GetComponent<PlayerSpells>().turn = "Player";
+        isBusy = false;
 
     }
 
@@ -68,5 +76,10 @@ public class GoblinSpells : MonoBehaviour
     {
         isFlipped = !isFlipped;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    public void WeakAttack()
+    {
+        attackDamage /= 2;
     }
 }

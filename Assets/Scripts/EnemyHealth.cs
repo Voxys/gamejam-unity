@@ -4,34 +4,28 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int damage = 15;
+    private Animator animator;
+    public bool isDead = false;
 
     public HealthBar healthBar;
 
-    public static EnemyHealth instance;
-    public void Awake()
-    {
-        instance = this;
-    }
-
     private void Start()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && currentHealth > 0)
-        {
-            TakeDamage(damage);
-        }
+
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        animator.SetTrigger("TakeDamage");
 
         if (currentHealth <= 0)
         {
@@ -42,9 +36,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        
+        isDead = true;
+        animator.SetBool("Dead", true);
 
-        //GameOverManager.instance.OnPlayerDeath();
         return;
     }
 }

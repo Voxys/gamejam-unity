@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Wall
+  - House1_Entrance
   layers:
   - Default
   - TransparentFX

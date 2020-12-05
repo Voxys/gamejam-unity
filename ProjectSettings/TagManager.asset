@@ -9,6 +9,11 @@ TagManager:
   - House1_Entrance
   - Monster
   - DungeonDoor
+  - House1_Exit
+  - House2_Entrance
+  - House3_Entrance
+  - Dungeon_Entrance
+  - House2_Exit
   layers:
   - Default
   - TransparentFX

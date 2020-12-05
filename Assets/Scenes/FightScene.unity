@@ -218,9 +218,11 @@ GameObject:
   - component: {fileID: 404933590}
   - component: {fileID: 404933589}
   - component: {fileID: 404933592}
-  m_Layer: 0
+  - component: {fileID: 404933594}
+  - component: {fileID: 404933593}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,6 +327,37 @@ MonoBehaviour:
   currentHealth: 0
   damage: 15
   healthBar: {fileID: 969744165}
+--- !u!114 &404933593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404933588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68fea4d73e094b4094f09fad7240948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healing: 15
+  target: {fileID: 1937386776}
+  Speed: 4
+  animator: {fileID: 404933589}
+  initialePosition: {fileID: 404933591}
+  IsReady: 0
+--- !u!114 &404933594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404933588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15541b288f6b9f46b9021190f5607bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!1 &450374480
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +892,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healing: 15
+  target: {fileID: 0}
+  Speed: 4
+  animator: {fileID: 0}
+  initialePosition: {fileID: 0}
+  IsReady: 0
 --- !u!1 &969744162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,9 +1538,10 @@ GameObject:
   - component: {fileID: 1937386775}
   - component: {fileID: 1937386774}
   - component: {fileID: 1937386773}
-  m_Layer: 0
+  - component: {fileID: 1937386776}
+  m_Layer: 8
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1592,6 +1631,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1937386776
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937386772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.11525068, y: -0.088654086}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5839047, y: 0.37704524}
+  m_EdgeRadius: 0
 --- !u!1 &1962289294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1744,7 @@ GameObject:
   - component: {fileID: 1973934500}
   - component: {fileID: 1973934499}
   - component: {fileID: 1973934498}
+  - component: {fileID: 1973934501}
   m_Layer: 5
   m_Name: Button_Spell1
   m_TagString: Untagged
@@ -1748,7 +1814,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: a68fea4d73e094b4094f09fad7240948, type: 3}
+      - m_Target: {fileID: 1973934496}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1798,6 +1864,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973934496}
   m_CullTransparentMesh: 0
+--- !u!114 &1973934501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973934496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68fea4d73e094b4094f09fad7240948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healing: 15
+  target: {fileID: 0}
+  Speed: 4
+  animator: {fileID: 0}
+  initialePosition: {fileID: 0}
+  IsReady: 0
 --- !u!1 &2118220345
 GameObject:
   m_ObjectHideFlags: 0

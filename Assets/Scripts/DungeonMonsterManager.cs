@@ -5,17 +5,21 @@ using UnityEngine;
 public class DungeonMonsterManager : MonoBehaviour
 {
     public float speed;
+    public float stoppingDistance;
+
 
     private Transform target;
 
     void Start()
     {
-        //target = GameObject.FindGameObjectsWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Vector2.Distance(transform.position,target.position)>stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
 }

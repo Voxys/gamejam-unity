@@ -3546,7 +3546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  JumpForce: 2
+  IsFighting: 0
 --- !u!50 &1311400930
 Rigidbody2D:
   serializedVersion: 4

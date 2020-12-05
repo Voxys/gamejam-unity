@@ -10,7 +10,7 @@ public class DungeonMonsterManager : MonoBehaviour
 
     void Start()
     {
-        target = Game
+        //target = GameObject.FindGameObjectsWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame

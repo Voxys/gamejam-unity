@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4857721e56edfd04eb7a0076d8097488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowCount: 4
-  ColumnCount: 4
+  RowCount: 50
+  ColumnCount: 50
   CellSize: 1
   GridColor: {r: 0.9780209, g: 1, b: 0, a: 1}
   ShowGrid: 1
@@ -257,60 +257,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5505206687023398055
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811472923665562151, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3816254957718284782, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-      propertyPath: m_Name
-      value: hyptosis_tile-art-batch-1_1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}

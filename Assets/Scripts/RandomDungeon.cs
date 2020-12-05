@@ -24,13 +24,13 @@ public class RandomDungeon : MonoBehaviour
             {
                 for (int j = 1; j < grid.ColumnCount - 1; j++)
                 {
-                int t_MaxTile;
-                if (CheckNeighbour(i + 0.5f, j + 0.5f))
+                    int t_MaxTile;
+                    if (CheckNeighbour(i + 0.5f, j + 0.5f))
                     t_MaxTile = tiles.Length;
-                else
-                {
+                    else
+                    {
                     t_MaxTile = 1;
-                }
+                    }
 
                     int t_RandomTile = Random.Range(0, t_MaxTile);
                     GameObject t_tile = tiles[t_RandomTile];
@@ -96,9 +96,8 @@ public class RandomDungeon : MonoBehaviour
         {
             t_CanPlaceProp = true;
         }
-        //Debug.Log(t_CanPlaceProp);
-        //Debug.Log(i);
-        //Debug.Log(j);
+        Debug.Log(t_CanPlaceProp);
+        Debug.Log(hit.collider);
 
         return t_CanPlaceProp;
     }

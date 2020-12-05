@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsFighting = false;
     private Rigidbody2D rb;
     public bool IsWorldPlayer = false;
+    public Animator Anim;
 
     void Start()
     {
@@ -30,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
             float moveVertical = Input.GetAxisRaw("Vertical") * speed;
 
             rb.velocity = new Vector2(moveHorizontal, moveVertical);
+        }
+
+        if(rb.velocity != new Vector2(0,0))
+        {
+            Anim.SetTrigger("Run");
+        }
+        else if(rb.velocity == new Vector2(0, 0))
+        {
+            
         }
         
     }

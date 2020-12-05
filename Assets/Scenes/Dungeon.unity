@@ -3659,8 +3659,9 @@ GameObject:
   - component: {fileID: 1311400932}
   - component: {fileID: 1311400930}
   - component: {fileID: 1311400931}
+  - component: {fileID: 1311400933}
   m_Layer: 0
-  m_Name: Player2DSprite
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3706,7 +3707,7 @@ SpriteRenderer:
   m_SortingLayerID: -455896989
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e4aa28d7d29859c4ba4869b554eee2f1, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 0e3502a80399d164ea01f1868f65acbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3744,7 +3745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15541b288f6b9f46b9021190f5607bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 8
   IsFighting: 0
   IsWorldPlayer: 0
 --- !u!50 &1311400930
@@ -3797,6 +3798,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 6392006235617639679, guid: a6b544c89e30f28459408257e37e2385, type: 3}
+--- !u!95 &1311400933
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311400926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58318e075a42d0c46ad5fd95a5642df8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1350219212
 PrefabInstance:
   m_ObjectHideFlags: 0

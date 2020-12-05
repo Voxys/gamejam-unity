@@ -5,19 +5,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    private Rigidbody2D rb;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        speed = 5f;
     }
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
 
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveVertical = Input.GetAxisRaw("Vertical") * speed;
 
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        transform.Translate(movement * speed);
+        rb.velocity = new Vector2(moveHorizontal, moveVertical);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

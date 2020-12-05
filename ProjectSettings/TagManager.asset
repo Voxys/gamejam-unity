@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
-  - Wall
-  - House1_Entrance
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -16,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Other
+  - 
+  - 
   - 
   - 
   - 
@@ -43,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1129574059
+    locked: 0
+  - name: Monster
+    uniqueID: 1420276271
     locked: 0

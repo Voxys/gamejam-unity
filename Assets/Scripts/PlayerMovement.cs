@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
-    public float JumpForce;
+    public bool IsFighting = false;
 
     private Rigidbody2D rb;
     void Start()
@@ -17,11 +17,15 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
+        if (!IsFighting)
+        {
+            float moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
 
-        float moveVertical = Input.GetAxisRaw("Vertical") * speed;
+            float moveVertical = Input.GetAxisRaw("Vertical") * speed;
 
-        rb.velocity = new Vector2(moveHorizontal, moveVertical);
+            rb.velocity = new Vector2(moveHorizontal, moveVertical);
+        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

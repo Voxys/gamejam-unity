@@ -6,7 +6,7 @@ public class RandomDungeon : MonoBehaviour
 {
     public Grid grid;
     public GameObject[] tiles;
-    public GameObject Wall;
+    public GameObject[] Props;
     public GameObject Door;
     public GameObject[] Monsters;
     public int MaxProps;
@@ -28,7 +28,7 @@ public class RandomDungeon : MonoBehaviour
             for (int j = 1; j < grid.ColumnCount - 1; j++)
             {
 
-                int t_RandomTile = Random.Range(0, 1);
+                int t_RandomTile = Random.Range(0, 2);
                 GameObject t_tile = tiles[t_RandomTile];
                 Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
                 float t_Scale = 1 / t_Sprite.bounds.size.x;
@@ -43,21 +43,22 @@ public class RandomDungeon : MonoBehaviour
     {
         for (int i = 0; i < MaxProps; i++)
         {
-            int x = Random.Range(0, grid.RowCount-1);
-            int y = Random.Range(0, grid.ColumnCount-1);
+            int x = Random.Range(1, grid.RowCount-1);
+            int y = Random.Range(1, grid.ColumnCount-1);
             Vector2 t_pos = new Vector2(x, y);
-            InstantiateWall(x,y);
+            InstantiateProps(x,y);
         }    
     }
     
-    private void InstantiateWall(int x, int y)
+    private void InstantiateProps(int x, int y)
     {
-        GameObject t_tile = Wall;
-        Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
+        int t_RandomProp = Random.Range(0, Props.Length);
+        GameObject t_Prop = Props[t_RandomProp];
+        Sprite t_Sprite = t_Prop.GetComponent<SpriteRenderer>().sprite;
         float t_Scale = 1 / t_Sprite.bounds.size.x;
-        t_tile.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
+        t_Prop.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
         Vector3 t_pos = new Vector3(x + 0.5f, y + 0.5f, 0);
-        Instantiate(t_tile, t_pos, Quaternion.identity);
+        Instantiate(t_Prop, t_pos, Quaternion.identity);
     }
 
     private void InstantiateRandomMonster()

@@ -5,28 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDungeon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public LevelLoad levelLoader;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "DungeonDoor")
         {
-            NextRoom();
+            LoadNextLevel();
+            //levelLoader.LoadNextLevel();
             Debug.Log("NextRoom");
         }
     }
 
-    private void NextRoom()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            Debug.Log("Fight Begin");
+        }
+    }
+
+    private void LoadNextLevel()
     {
         SceneManager.LoadScene("Assets/Scenes/Dungeon.unity");
     }

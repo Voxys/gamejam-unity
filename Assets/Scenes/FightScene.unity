@@ -1518,6 +1518,8 @@ GameObject:
   - component: {fileID: 1937386775}
   - component: {fileID: 1937386774}
   - component: {fileID: 1937386773}
+  - component: {fileID: 1937386777}
+  - component: {fileID: 1937386776}
   m_Layer: 8
   m_Name: Goblin
   m_TagString: Monster
@@ -1610,6 +1612,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937386776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937386772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5505aae51d75354b986bbaba14d5b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  damage: 25
+  healthBar: {fileID: 2118220347}
+--- !u!114 &1937386777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937386772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fab5b0b5c0719e439cd59ca23ffa9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 404933591}
+  Speed: 20
+  timeToFight: 0
+  healthBar: {fileID: 2118220345}
+  attackDamage: 15
 --- !u!1 &1962289294
 GameObject:
   m_ObjectHideFlags: 0

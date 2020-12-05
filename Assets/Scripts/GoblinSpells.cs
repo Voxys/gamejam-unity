@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
-public class PlayerSpells : MonoBehaviour
+
+public class GoblinSpells : MonoBehaviour
 {
-    public int healing = 15;
     public Transform target;
     public float Speed = 4;
     private Animator animator;
     private Vector3 initialePosition;
     private bool isFlipped = false;
-    public int DamageAtt1 = 35;
+    public bool timeToFight = false;
+    public GameObject healthBar;
+    public int attackDamage = 15;
 
     private void Awake()
     {
@@ -16,16 +18,19 @@ public class PlayerSpells : MonoBehaviour
         initialePosition = transform.position;
     }
 
-    [ContextMenu("Normal Attack")]
     public void Normal_Attack()
     {
-
         StartCoroutine(Cr_Attack());
     }
 
     public void Update()
     {
-
+        if (timeToFight)
+        {
+            Normal_Attack();
+            timeToFight = false;
+        }
+            
     }
 
     IEnumerator Cr_Attack()
@@ -33,8 +38,9 @@ public class PlayerSpells : MonoBehaviour
 
         while (Mathf.Abs(transform.position.x - target.transform.position.x) > 2.5f)
         {
+            healthBar.SetActive(false);
             animator.SetBool("Run", true);
-            transform.Translate(Speed * Time.deltaTime, 0, 0);
+            transform.Translate(-Speed * Time.deltaTime, 0, 0);
             yield return new WaitForEndOfFrame();
             animator.SetBool("Run", false);
         }
@@ -42,18 +48,19 @@ public class PlayerSpells : MonoBehaviour
         animator.SetTrigger("Attack");
 
         yield return new WaitForSeconds(0.3f);
-        EnemyHealth.instance.TakeDamage(DamageAtt1);
+        PlayerHealth.instance.TakeDamage(attackDamage);
         yield return new WaitForSeconds(0.2f);
 
         Flip();
         while (Mathf.Abs(transform.position.x - initialePosition.x) > 0.2f)
         {
             animator.SetBool("Run", true);
-            transform.Translate(-Speed * Time.deltaTime, 0, 0);
+            transform.Translate(Speed * Time.deltaTime, 0, 0);
             yield return new WaitForEndOfFrame();
             animator.SetBool("Run", false);
         }
         Flip();
+        healthBar.SetActive(true);
 
     }
 
@@ -62,16 +69,4 @@ public class PlayerSpells : MonoBehaviour
         isFlipped = !isFlipped;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
-
-
-    public void HealingSpell()
-    {
-        PlayerHealth.instance.HealPlayer(healing);
-    }
-
-    public void ShieldSpell()
-    {
-        
-    }
-
 }

@@ -8,6 +8,12 @@ public class EnemyHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public static EnemyHealth instance;
+    public void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -26,5 +32,19 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+    }
+
+    public void Die()
+    {
+        
+
+        //GameOverManager.instance.OnPlayerDeath();
+        return;
     }
 }

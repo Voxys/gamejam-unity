@@ -7,12 +7,18 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     public bool IsFighting = false;
-
     private Rigidbody2D rb;
+    public bool IsWorldPlayer = false;
+
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
+
+        if (IsWorldPlayer)
+        {
+            GameManager.Instance.WorldPlayer = this.gameObject;
+        }
+
     }
     
     void FixedUpdate()

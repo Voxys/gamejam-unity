@@ -5,8 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public GameObject WorldPlayer;
 
-    
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         

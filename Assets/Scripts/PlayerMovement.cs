@@ -23,8 +23,4 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(moveHorizontal, moveVertical);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
 }

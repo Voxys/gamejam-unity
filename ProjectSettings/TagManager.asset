@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Wall
   - House1_Entrance
+  - Monster
+  - DungeonDoor
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2838536499
+    locked: 0
+  - name: Wall
+    uniqueID: 3262125931
+    locked: 0
+  - name: Monster
+    uniqueID: 615982867
+    locked: 0
+  - name: Player
+    uniqueID: 3839070307
     locked: 0

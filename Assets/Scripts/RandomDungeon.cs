@@ -8,88 +8,81 @@ public class RandomDungeon : MonoBehaviour
     public GameObject[] tiles;
     public GameObject Wall;
     public GameObject Door;
+    public GameObject[] Monsters;
+    public int MaxProps;
+
+    [SerializeField]
+    private int MaxMonsters;
 
     void Start()
     {
-
+        FillFloor();
         RandomFill();
+        InstantiateRandomMonster();
+    }
+
+    private void FillFloor()
+    {
+        for (int i = 1; i < grid.RowCount - 1; i++)
+        {
+            for (int j = 1; j < grid.ColumnCount - 1; j++)
+            {
+
+                int t_RandomTile = Random.Range(0, 1);
+                GameObject t_tile = tiles[t_RandomTile];
+                Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
+                float t_Scale = 1 / t_Sprite.bounds.size.x;
+                t_tile.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
+                Vector3 t_pos = new Vector3(i + 0.5f, j + 0.5f, 0);
+                Instantiate(t_tile, t_pos, Quaternion.identity);
+            }
+        }
     }
     
     private void RandomFill()
     {
-            for (int i = 1; i < grid.RowCount - 1; i++)
-            {
-                for (int j = 1; j < grid.ColumnCount - 1; j++)
-                {
-                    int t_MaxTile;
-                    if (CheckNeighbour(i + 0.5f, j + 0.5f))
-                    t_MaxTile = tiles.Length-1;
-                    else
-                    {
-                    t_MaxTile = 1;
-                    }
-
-                    int t_RandomTile = Random.Range(0, t_MaxTile);
-                    GameObject t_tile = tiles[t_RandomTile];
-                    Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
-                    float t_Scale = 1 / t_Sprite.bounds.size.x;
-                    t_tile.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
-                    Vector3 t_pos = new Vector3(i + 0.5f, j + 0.5f, 0);
-                    Instantiate(t_tile, t_pos, Quaternion.identity);
-                }
-            }
-
-
-        /*
-        int t_RandomDoor = Random.Range(1, 4);
-
-        //bordure gauche
-        for (int i=0; i<1;i++)
+        for (int i = 0; i < MaxProps; i++)
         {
-            for (int j=0;j<grid.ColumnCount;j++)
-            {
-                InstantiateWall(i,j);
-            }
-        }
-
-        //bordure bas
-        for (int i=0;i<grid.RowCount;i++)
-        {
-            for (int j = 0; j < 1; j++)
-            {
-                InstantiateWall(i, j);
-            }
-        }
-
-        //bordure haut
-        for (int i = 0; i < grid.RowCount; i++)
-        {
-            InstantiateWall(i, grid.RowCount-1);
-        }
-
-        //bordure droit
-        for (int i = 0; i < grid.RowCount; i++)
-        {
-            InstantiateWall(grid.ColumnCount-1, i);
-        }
-
-*/
-        
+            int x = Random.Range(0, grid.RowCount-1);
+            int y = Random.Range(0, grid.ColumnCount-1);
+            Vector2 t_pos = new Vector2(x, y);
+            InstantiateWall(x,y);
+        }    
     }
     
-    private void InstantiateWall(int i, int j)
+    private void InstantiateWall(int x, int y)
     {
         GameObject t_tile = Wall;
         Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
         float t_Scale = 1 / t_Sprite.bounds.size.x;
         t_tile.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
-        //Vector3 t_pos = new Vector3(i, j, 0);
-        Vector3 t_pos = new Vector3(i + 0.5f, j + 0.5f, 0);
+        Vector3 t_pos = new Vector3(x + 0.5f, y + 0.5f, 0);
         Instantiate(t_tile, t_pos, Quaternion.identity);
     }
 
+    private void InstantiateRandomMonster()
+    {
+        int t_NumberOfMonster = Random.Range(0, MaxMonsters);
+        int t_RandomChosenMonster = Random.Range(0, Monsters.Length);
 
-    //TODO Check si les voisins de la case son de tag Wall, si oui return false
+        for (int i = 0; i < t_NumberOfMonster; i++)
+        {
+            int x = Random.Range(0, grid.RowCount - 1);
+            int y = Random.Range(0, grid.ColumnCount - 1);
+
+            GameObject t_Monster = Monsters[t_RandomChosenMonster];
+
+            Sprite t_Sprite = t_Monster.GetComponent<SpriteRenderer>().sprite;
+            float t_Scale = 1 / t_Sprite.bounds.size.x;
+            t_Monster.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
+            Vector3 t_pos = new Vector3(x + 0.5f, y + 0.5f, 0);
+
+            Instantiate(t_Monster, t_pos, Quaternion.identity);
+        }
+    }
+
+
+    //Check si les voisins de la case son de tag Wall, si oui return false
     private bool CheckNeighbour(float i, float j)
     {
         bool t_CanPlaceProp;
@@ -104,15 +97,7 @@ public class RandomDungeon : MonoBehaviour
         {
             t_CanPlaceProp = true;
         }
-        Debug.Log(t_CanPlaceProp);
-        Debug.Log(hit.collider);
 
         return t_CanPlaceProp;
     }
-    /*
-    private void InstantiateDoor()
-    {
-        Instantiate(Door, t_pos, Quaternion.identity);
-    }
-    */
 }

@@ -62,13 +62,13 @@ public class RandomDungeon : MonoBehaviour
 
     private void InstantiateRandomMonster()
     {
-        int t_NumberOfMonster = Random.Range(0, MaxMonsters);
+        int t_NumberOfMonster = Random.Range(1, MaxMonsters);
         int t_RandomChosenMonster = Random.Range(0, Monsters.Length);
 
         for (int i = 0; i < t_NumberOfMonster; i++)
         {
-            int x = Random.Range(0, grid.RowCount - 1);
-            int y = Random.Range(0, grid.ColumnCount - 1);
+            int x = Random.Range(1, grid.RowCount - 1);
+            int y = Random.Range(1, grid.ColumnCount - 1);
 
             GameObject t_Monster = Monsters[t_RandomChosenMonster];
 

@@ -21,6 +21,7 @@ public class PlayerDungeon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
+            SceneManager.LoadScene("Assets/Scenes/FightScene.unity");
             Debug.Log("Fight Begin");
         }
     }

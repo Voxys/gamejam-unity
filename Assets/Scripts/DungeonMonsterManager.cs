@@ -19,12 +19,19 @@ public class DungeonMonsterManager : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position,target.position)>stoppingDistance && Vector2.Distance(transform.position, target.position) < seeingDistance)
+        if (Vector2.Distance(transform.position,target.position)>stoppingDistance && Vector2.Distance(transform.position, target.position) < seeingDistance)
         {
-            Sound.Play();
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
 
-        Sound.Stop();
+        if(Vector2.Distance(transform.position, target.position) > seeingDistance)
+        {
+            PlaySound();
+        }
+    }
+
+    private void PlaySound()
+    {
+        Sound.Play();
     }
 }

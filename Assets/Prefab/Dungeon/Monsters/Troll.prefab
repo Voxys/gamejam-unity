@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6541060861147995290}
   - component: {fileID: 5493871809059991155}
   - component: {fileID: -3820469290367537314}
-  - component: {fileID: -3447606709871227925}
+  - component: {fileID: -7281346239088989617}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Monster
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!82 &-3447606709871227925
+--- !u!82 &-7281346239088989617
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

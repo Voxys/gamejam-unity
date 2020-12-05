@@ -235,14 +235,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4857721e56edfd04eb7a0076d8097488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowCount: 50
-  ColumnCount: 50
+  RowCount: 40
+  ColumnCount: 40
   CellSize: 1
   GridColor: {r: 0.9780209, g: 1, b: 0, a: 1}
   ShowGrid: 1
   AvailableTiles:
   - {fileID: 3816254957718284782, guid: 23ceb9d48cf7ab74abf9b156578c1dcd, type: 3}
-  SelectedTileId: 0
+  - {fileID: 6851130583597060877, guid: 6b5331be1b729f848adb81596982bcb0, type: 3}
+  - {fileID: 7436988653685062771, guid: 61abf23b4d99bd84c8562d29614fff4f, type: 3}
+  - {fileID: 154477688311741282, guid: 553dcfc72fea06b43bcd57222761194a, type: 3}
+  - {fileID: 384961108335627520, guid: 1b02bf3e47acf9a4ca7b6b254b1a2286, type: 3}
+  - {fileID: 3055339525670916184, guid: 4f6be52b323013a418c621d55805b920, type: 3}
+  - {fileID: 7095568713069850200, guid: e0cd6c9459a556d4983730f505692884, type: 3}
+  - {fileID: 4831120651591414573, guid: 63e3ac062bd62994c979f95f6e1fb1cd, type: 3}
+  - {fileID: 3526865207121873536, guid: 069ac76b95081c145bf15aacc02c3769, type: 3}
+  - {fileID: 7571661172043704461, guid: 89516d1d35d6c2f4eb65399dbd6bf598, type: 3}
+  - {fileID: 5970600790493528084, guid: 5f44400eafcb90143adb68aae3dc6e44, type: 3}
+  SelectedTileId: 1
 --- !u!4 &940597777
 Transform:
   m_ObjectHideFlags: 0

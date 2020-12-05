@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-
 public class PlayerSpells : MonoBehaviour
 {
     public int healing = 15;
@@ -28,7 +27,7 @@ public class PlayerSpells : MonoBehaviour
 
     IEnumerator Cr_Attack()
     {
-        
+
         while (Mathf.Abs(transform.position.x - target.transform.position.x) > 2.5f)
         {
             animator.SetBool("Run", true);
@@ -64,4 +63,8 @@ public class PlayerSpells : MonoBehaviour
         PlayerHealth.instance.HealPlayer(healing);
     }
 
+    public void ShieldSpell()
+    {
+        
+    }
 }

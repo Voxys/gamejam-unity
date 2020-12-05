@@ -7,13 +7,10 @@ public class RandomDungeon : MonoBehaviour
     public Grid grid;
     public GameObject[] tiles;
     public GameObject Wall;
+    public GameObject Door;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //int t_RandomGrid = Random.Range(10, 20);
-        //grid.RowCount = t_RandomGrid;
-        //grid.ColumnCount = t_RandomGrid;
 
         RandomFill();
     }
@@ -26,7 +23,7 @@ public class RandomDungeon : MonoBehaviour
                 {
                     int t_MaxTile;
                     if (CheckNeighbour(i + 0.5f, j + 0.5f))
-                    t_MaxTile = tiles.Length;
+                    t_MaxTile = tiles.Length-1;
                     else
                     {
                     t_MaxTile = 1;
@@ -41,8 +38,12 @@ public class RandomDungeon : MonoBehaviour
                     Instantiate(t_tile, t_pos, Quaternion.identity);
                 }
             }
-        
-        
+
+
+        /*
+        int t_RandomDoor = Random.Range(1, 4);
+
+        //bordure gauche
         for (int i=0; i<1;i++)
         {
             for (int j=0;j<grid.ColumnCount;j++)
@@ -51,6 +52,7 @@ public class RandomDungeon : MonoBehaviour
             }
         }
 
+        //bordure bas
         for (int i=0;i<grid.RowCount;i++)
         {
             for (int j = 0; j < 1; j++)
@@ -58,20 +60,26 @@ public class RandomDungeon : MonoBehaviour
                 InstantiateWall(i, j);
             }
         }
+
+        //bordure haut
         for (int i = 0; i < grid.RowCount; i++)
         {
             InstantiateWall(i, grid.RowCount-1);
         }
+
+        //bordure droit
         for (int i = 0; i < grid.RowCount; i++)
         {
             InstantiateWall(grid.ColumnCount-1, i);
         }
+
+*/
         
     }
     
     private void InstantiateWall(int i, int j)
     {
-        GameObject t_tile = tiles[2];
+        GameObject t_tile = Wall;
         Sprite t_Sprite = t_tile.GetComponent<SpriteRenderer>().sprite;
         float t_Scale = 1 / t_Sprite.bounds.size.x;
         t_tile.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
@@ -101,5 +109,10 @@ public class RandomDungeon : MonoBehaviour
 
         return t_CanPlaceProp;
     }
-
+    /*
+    private void InstantiateDoor()
+    {
+        Instantiate(Door, t_pos, Quaternion.identity);
+    }
+    */
 }

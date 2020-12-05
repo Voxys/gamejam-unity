@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
-        //speed = 5f;
     }
     
     void FixedUpdate()
@@ -24,15 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(moveHorizontal, moveVertical);
     }
-    /*
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        RB2D.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
-    }
-    */
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);

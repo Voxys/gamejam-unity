@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public static int GoldAmount;
     public static int PotionAmount;
     public static int NumberOfVisitedRoom;
-    public static bool MapInitiate;
+
 
 
     //----------------------------------//
@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         PlayerHealth = 100;
         GoldAmount = 50;
         PotionAmount = 0;
-        MapInitiate = false;
         
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
@@ -89,7 +88,6 @@ public class GameManager : MonoBehaviour
         else
             PotionButton_Backpack.SetActive(false);
 
-        Debug.Log(MapInitiate);
     }
 
     //----------------------------------//

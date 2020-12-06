@@ -54,6 +54,6 @@ public class PlayerDungeon : MonoBehaviour
 
     private void LoadWorldMap()
     {
-        SceneManager.LoadScene("Assets/Scenes/WorldMap.unity");
+        SceneManager.LoadScene("Assets/Scenes/WorldMapWithoutGameManager&UI.unity");
     }
 }

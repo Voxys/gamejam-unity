@@ -7,16 +7,24 @@ using UnityEngine.SceneManagement;
 public class ButtonSelectorEndMenu : MonoBehaviour
 {
 	public Button RetryBtn;
+	public Button QuitBtn;
 
 	void Start()
 	{
 		Button btnRetry = RetryBtn.GetComponent<Button>();
+		Button btnQuit = QuitBtn.GetComponent<Button>();
 
 		btnRetry.onClick.AddListener(Retry);
+		btnQuit.onClick.AddListener(Quit);
 	}
 
 	void Retry()
 	{
 		SceneManager.LoadScene("Menu");
 	}
+	
+	void Quit()
+    {
+		Application.Quit();
+    }
 }

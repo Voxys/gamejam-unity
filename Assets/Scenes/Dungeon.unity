@@ -362,11 +362,11 @@ MonoBehaviour:
   - {fileID: 3079169636227162427, guid: 62cfa41a54bd5b04090d7d5ee5226844, type: 3}
   - {fileID: 7024645640182666202, guid: 4b0ec2f1c47922a40bbed310687fc993, type: 3}
   - {fileID: 5727303420014748145, guid: 45547c0d448014f44b3a5f1a33860739, type: 3}
-  - {fileID: 9121682324137164498, guid: a55581656327e9149bd591c260cbd4e1, type: 3}
   Door: {fileID: 6092151943614723766, guid: 7af8d4c79a4a2a34ca6569f21a6d4ecb, type: 3}
   Monsters:
   - {fileID: 2429031658946815018, guid: f58dfebbbbc981849a67d8772108eacb, type: 3}
   MaxProps: 25
+  MonsterSpawnDelay: 1
   MaxMonsters: 3
 --- !u!4 &64590377
 Transform:
@@ -3661,7 +3661,6 @@ GameObject:
   - component: {fileID: 1311400930}
   - component: {fileID: 1311400931}
   - component: {fileID: 1311400933}
-  - component: {fileID: 1311400934}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3822,20 +3821,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1311400934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311400926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e10a77e3d84e62043bff03d7c04a0056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WorldPlayer: {fileID: 0}
-  NumberOfVisitedRoom: 0
 --- !u!1001 &1350219212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4084,6 +4069,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6997965003443503503, guid: 45547c0d448014f44b3a5f1a33860739, type: 3}
   m_PrefabInstance: {fileID: 1387030242}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472053448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472053450}
+  - component: {fileID: 1472053449}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1472053449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472053448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10a77e3d84e62043bff03d7c04a0056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldPlayer: {fileID: 0}
+--- !u!4 &1472053450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472053448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.210724, y: 15.575459, z: -2.092042}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1563442065
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.20392157}
+  m_Color: {r: 1, g: 0.68469584, b: 0, a: 0.09411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8229,7 +8229,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "On a du travail pour toi.\nRend toi \xE0 la maison vers l'est."
+  m_Text: "On a du travail pour toi,\nrend toi \xE0 la maison vers l'est, tu y rencontreras
+    le commandant."
 --- !u!222 &2015258383
 CanvasRenderer:
   m_ObjectHideFlags: 0

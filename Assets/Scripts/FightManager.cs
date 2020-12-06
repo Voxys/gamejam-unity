@@ -10,6 +10,7 @@ public class FightManager : MonoBehaviour
     public GameObject[] backgroundList;
     public GameObject[] DungeonMonsterList;
     public GameObject[] WorldMapMonsterList;
+    public GameObject Boss;
     private string activeScene;
     private Vector3 position;
 
@@ -47,7 +48,10 @@ public class FightManager : MonoBehaviour
 
         // La salle du boss
         if (activeScene == "BossRoom")
+        {
             backgroundList[2].SetActive(true);
+            Instantiate(Boss, new Vector3(4.97f, -1.75f, 0), Quaternion.identity);
+        }
 
         // La scène de création et de tests
         if (activeScene == "FightScene")

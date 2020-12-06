@@ -55,16 +55,20 @@ public class PlayerMovement : MonoBehaviour
             IsFlipped = true;
         }
 
-
-        if(rb.velocity != new Vector2(0,0) && Anim.GetBool("IsGoingUp") == false)
+        // ----- Joue le son de marche si le joueur à une velocité
+        if (rb.velocity != new Vector2(0, 0))
         {
-            Anim.SetBool("Run", true);
-
             if (Sound.isPlaying == false)
             {
                 PlaySound();
                 Debug.Log("Running");
             }
+        }
+
+
+        if(rb.velocity != new Vector2(0,0) && Anim.GetBool("IsGoingUp") == false)
+        {
+            Anim.SetBool("Run", true);
 
         }
         else if(rb.velocity == new Vector2(0, 0))

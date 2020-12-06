@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2081628194037173844}
   - component: {fileID: 2081628194037173841}
   m_Layer: 0
-  m_Name: CrossfadeCloser
+  m_Name: Crossfade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

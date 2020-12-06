@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
@@ -11,8 +8,6 @@ public class Grid : MonoBehaviour
     public bool ShowGrid = true;
     private Tile[,] m_Tiles;
 
-    [Space]
-    [Header("Grid Editor")]
 
 #if UNITY_EDITOR
     public GameObject[] AvailableTiles;

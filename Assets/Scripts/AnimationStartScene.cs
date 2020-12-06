@@ -7,6 +7,16 @@ public class AnimationStartScene : MonoBehaviour
 {
     bool HitTheRock = false;
 
+
+    public AudioClip SeaSound;
+    public AudioClip CrashSound;
+    public AudioSource AudioSource;
+
+    private void Start()
+    {
+        AudioSource.PlayOneShot(SeaSound);
+    }
+
     public void FixedUpdate()
     {
         if (!HitTheRock)
@@ -18,8 +28,16 @@ public class AnimationStartScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioSource.Stop();
+        AudioSource.PlayOneShot(CrashSound);
         HitTheRock = true;
-        SceneManager.LoadScene("WorldMap");
+        StartCoroutine(LoadScene());
 
+    }
+
+    private IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(1f) ;
+        SceneManager.LoadScene("WorldMap");
     }
 }

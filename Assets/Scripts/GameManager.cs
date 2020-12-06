@@ -72,11 +72,6 @@ public class GameManager : MonoBehaviour
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
         BackpackImage.SetActive(false);
-
-        
-
-
-        Debug.Log("ok" + this.gameObject);
     }
 
 
@@ -90,8 +85,6 @@ public class GameManager : MonoBehaviour
             PotionButton_Backpack.SetActive(true);
         else
             PotionButton_Backpack.SetActive(false);
-
-        Debug.Log(PlayerHealth);
 
     }
 

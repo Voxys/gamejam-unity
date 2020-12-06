@@ -10,7 +10,7 @@ public class FightManager : MonoBehaviour
     public GameObject[] backgroundList;
     public GameObject[] DungeonMonsterList;
     public GameObject[] WorldMapMonsterList;
-    private Scene activeScene;
+    private string activeScene;
     private Vector3 position;
 
     public static FightManager instance;
@@ -25,10 +25,10 @@ public class FightManager : MonoBehaviour
             background.SetActive(false);
         }
 
-        activeScene = SceneManager.GetActiveScene();
+        activeScene = GameManager.Instance.GetSceneActive();
 
         // Map de départ
-        if (activeScene.name == "WorldMap")
+        if (activeScene == "WorldMap")
         {
             int monster = Random.Range(0, DungeonMonsterList.Length);
             if (monster == 0)
@@ -39,18 +39,18 @@ public class FightManager : MonoBehaviour
         }
 
         // Le donjon
-        if (activeScene.name == "Dungeon")
+        if (activeScene == "Dungeon")
         {
             backgroundList[1].SetActive(true);
             Instantiate(DungeonMonsterList[Random.Range(0, DungeonMonsterList.Length)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
         }
 
         // La salle du boss
-        if (activeScene.name == "BossRoom")
+        if (activeScene == "BossRoom")
             backgroundList[2].SetActive(true);
 
         // La scène de création et de tests
-        if (activeScene.name == "FightScene")
+        if (activeScene == "FightScene")
         {
             backgroundList[2].SetActive(true);
             Instantiate(DungeonMonsterList[Random.Range(0, DungeonMonsterList.Length)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
@@ -83,7 +83,7 @@ public class FightManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         menuWin.SetActive(true);
         yield return new WaitForSeconds(1f);
-        SceneManager.UnloadSceneAsync("FightScene");
+        SceneManager.LoadScene("Dungeon");
     }
 
 

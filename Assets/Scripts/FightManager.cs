@@ -9,10 +9,15 @@ public class FightManager : MonoBehaviour
     public GameObject menuWin;
     public GameObject[] backgroundList;
     public GameObject[] DungeonMonsterList;
+    public GameObject[] WorldMapMonsterList;
     private Scene activeScene;
+    private Vector3 position;
+
+    public static FightManager instance;
 
     private void Awake()
     {
+        instance = this;
         // Charger le bon bakcground en fonction de la scène active
         // Charger le bon monstre en fonction de la scène active et un peu de hasard
         foreach (var background in backgroundList)
@@ -22,19 +27,33 @@ public class FightManager : MonoBehaviour
 
         activeScene = SceneManager.GetActiveScene();
 
+        // Map de départ
         if (activeScene.name == "WorldMap")
+        {
+            int monster = Random.Range(0, DungeonMonsterList.Length);
+            if (monster == 0)
+                position = new Vector3(5.23f, -2.17f, 0f);
+
+            Instantiate(WorldMapMonsterList[Random.Range(0, DungeonMonsterList.Length)], position, Quaternion.identity);
             backgroundList[0].SetActive(true);
+        }
+
+        // Le donjon
         if (activeScene.name == "Dungeon")
         {
             backgroundList[1].SetActive(true);
-            Instantiate(DungeonMonsterList[Random.Range(0,1)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
+            Instantiate(DungeonMonsterList[Random.Range(0, DungeonMonsterList.Length)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
         }
+
+        // La salle du boss
         if (activeScene.name == "BossRoom")
             backgroundList[2].SetActive(true);
+
+        // La scène de création et de tests
         if (activeScene.name == "FightScene")
         {
             backgroundList[2].SetActive(true);
-            Instantiate(DungeonMonsterList[Random.Range(0, 1)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
+            Instantiate(DungeonMonsterList[Random.Range(0, DungeonMonsterList.Length)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
         }
     }
 

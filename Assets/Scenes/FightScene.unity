@@ -2582,7 +2582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770119227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.96, y: -0.6600001, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2609,6 +2609,7 @@ MonoBehaviour:
   DungeonMonsterList:
   - {fileID: 8030754884783819649, guid: 663e7c7c2ae283947a4cba5e37c1addd, type: 3}
   - {fileID: 8776992479671211275, guid: 309b485929dd7cd4aac58d0e8720ed1a, type: 3}
+  WorldMapMonsterList: []
 --- !u!1 &1784108693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,7 +3396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007561742075006214, guid: f67749deb3493294189879dcd7124d61, type: 3}
       propertyPath: maxDamageAtt1
-      value: 35
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 9007561742075006214, guid: f67749deb3493294189879dcd7124d61, type: 3}
       propertyPath: minDamageAtt1

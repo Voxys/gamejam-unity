@@ -6,13 +6,11 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     private Animator animator;
     public bool isDead = false;
-    public FightManager fightManager;
 
     public HealthBar healthBar;
 
     private void Start()
     {
-        fightManager = GameObject.FindWithTag("fightManager").GetComponent<FightManager>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -40,7 +38,8 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead", true);
-        fightManager.LoadWinScene();
+        FightManager.instance.LoadWinScene();
+        Destroy(healthBar.gameObject);
 
         return;
     }

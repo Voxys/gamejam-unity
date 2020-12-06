@@ -91,12 +91,12 @@ public class FightManager : MonoBehaviour
     }
 
 
-    private void ExitTheGame()
+    public void ExitTheGame()
     {
         Application.Quit();
     }
 
-    private void Retry()
+    public void Retry()
     {
         // retour au début
         SceneManager.LoadScene("WorldMapWithoutGameManager&UI");

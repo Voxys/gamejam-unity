@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
+    public GameObject CompleteUI;
+
     public GameObject WorldPlayer;
     public GameObject HealthUI_Text;
     public GameObject CoinUI_Text;
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject BackpackUI;
     public GameObject PotionButton_Backpack;
 
+    public bool HasEnteredDungeon;
 
     public static Scene SceneActive;
     public static string scene;
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     public static int GoldAmount;
     public static int PotionAmount;
     public static int NumberOfVisitedRoom;
+    public static bool MapInitiate;
 
 
     //----------------------------------//
@@ -49,6 +53,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(CompleteUI);
     }
 
     void Start()
@@ -56,6 +62,7 @@ public class GameManager : MonoBehaviour
         PlayerHealth = 100;
         GoldAmount = 50;
         PotionAmount = 0;
+        MapInitiate = false;
         
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
@@ -63,6 +70,11 @@ public class GameManager : MonoBehaviour
 
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
+
+        
+
+
+        Debug.Log("ok" + this.gameObject);
     }
 
 
@@ -76,6 +88,8 @@ public class GameManager : MonoBehaviour
             PotionButton_Backpack.SetActive(true);
         else
             PotionButton_Backpack.SetActive(false);
+
+        Debug.Log(MapInitiate);
     }
 
     //----------------------------------//
@@ -174,5 +188,8 @@ public class GameManager : MonoBehaviour
         HealPlayer();
     }
 
-
+    public void DestroyUI()
+    {
+        Destroy(CompleteUI);
+    }
 }

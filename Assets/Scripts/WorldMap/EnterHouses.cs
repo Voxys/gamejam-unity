@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EnterHouses : MonoBehaviour
 {
-
     private void Awake()
     {
         //DontDestroyOnLoad(this.gameObject);
@@ -36,13 +35,13 @@ public class EnterHouses : MonoBehaviour
         if (collision.gameObject.CompareTag("DungeonLobby_Entrance"))
         {
             player.enabled = false;
-            SceneManager.LoadScene("DungeonLobby", LoadSceneMode.Additive);
+            SceneManager.LoadScene("DungeonLobby");
         }
 
         if (collision.gameObject.CompareTag("Dungeon_Entrance"))
         {
             player.enabled = false;
-            SceneManager.LoadScene("Dungeon");
+            SceneManager.LoadSceneAsync("Dungeon");
         }
 
         if (collision.gameObject.CompareTag("House1_Exit"))

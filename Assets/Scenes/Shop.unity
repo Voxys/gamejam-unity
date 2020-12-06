@@ -3428,7 +3428,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241523491}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4033,7 +4033,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1241523491}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5909,9 +5909,7 @@ RectTransform:
   m_Children:
   - {fileID: 1251631799}
   - {fileID: 609777596}
-  - {fileID: 2143302375}
   - {fileID: 726098395}
-  - {fileID: 1427540166}
   - {fileID: 815248394}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -6016,6 +6014,8 @@ RectTransform:
   - {fileID: 1787389928}
   - {fileID: 1850085080}
   - {fileID: 1024184629}
+  - {fileID: 2143302375}
+  - {fileID: 1427540166}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6417,7 +6417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427540166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6425,16 +6425,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427540165}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1241523491}
-  m_RootOrder: 4
+  m_Father: {fileID: 1244677646}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -276, y: 160}
+  m_AnchoredPosition: {x: 146.1, y: -48.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427540167
@@ -8487,6 +8487,8 @@ MonoBehaviour:
   HealthUI_Text: {fileID: 726098394}
   CoinUI_Text: {fileID: 1427540165}
   PotionUI_Text: {fileID: 815248393}
+  BackpackUI: {fileID: 0}
+  PotionButton_Backpack: {fileID: 0}
 --- !u!4 &1894398198
 Transform:
   m_ObjectHideFlags: 0
@@ -9438,7 +9440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2143302375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9446,16 +9448,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143302374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1241523491}
-  m_RootOrder: 2
+  m_Father: {fileID: 1244677646}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -374.95, y: 167.81}
+  m_AnchoredPosition: {x: 46.3, y: -36.8}
   m_SizeDelta: {x: 24.592491, y: 27.531174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143302376

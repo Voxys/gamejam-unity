@@ -4182,7 +4182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1472053449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4196,6 +4196,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldPlayer: {fileID: 0}
+  HealthUI_Text: {fileID: 0}
+  CoinUI_Text: {fileID: 0}
+  PotionUI_Text: {fileID: 0}
+  BackpackUI: {fileID: 0}
+  PotionButton_Backpack: {fileID: 0}
 --- !u!4 &1472053450
 Transform:
   m_ObjectHideFlags: 0

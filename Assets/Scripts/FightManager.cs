@@ -89,6 +89,7 @@ public class FightManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Dungeon");
         GameManager.Instance.ActivateUI();
+        GameManager.Instance.IncrementKillCounter();
     }
 
 

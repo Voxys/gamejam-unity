@@ -4284,9 +4284,11 @@ MonoBehaviour:
   HealthUI_Text: {fileID: 0}
   CoinUI_Text: {fileID: 0}
   PotionUI_Text: {fileID: 0}
+  PotionForceUI_Text: {fileID: 0}
   BackpackUI: {fileID: 0}
   BackpackImage: {fileID: 0}
   PotionButton_Backpack: {fileID: 0}
+  PotionForceButton_Backpack: {fileID: 0}
   HasEnteredDungeon: 0
 --- !u!4 &1472053450
 Transform:
@@ -5110,7 +5112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2081628194563083658, guid: a6b544c89e30f28459408257e37e2385, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b544c89e30f28459408257e37e2385, type: 3}

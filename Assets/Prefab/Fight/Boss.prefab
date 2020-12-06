@@ -215,8 +215,8 @@ MonoBehaviour:
   healthBar: {fileID: 4777062537314756952}
   attackDamage: 25
   WaitingTimeAfterAttack: 0.6
-  Hurt: {fileID: 0}
-  Sword: {fileID: 0}
+  Hurt: {fileID: 8300000, guid: 04cd760053fde6941b27c726bedf7246, type: 3}
+  Sword: {fileID: 8300000, guid: 30b5ce3e28641a34280288606aa2d770, type: 3}
   Sound: {fileID: 7332404673862986164}
 --- !u!82 &7332404673862986164
 AudioSource:
@@ -230,7 +230,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67632276, y: 0.570353}
   m_AnchorMax: {x: 0.896, y: 0.59400004}
-  m_AnchoredPosition: {x: 3.800003, y: -0.40000153}
+  m_AnchoredPosition: {x: 3.8000183, y: -0.40000153}
   m_SizeDelta: {x: -8.428467, y: 0.7840271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4777062537314756959

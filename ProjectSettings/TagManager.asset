@@ -14,6 +14,11 @@ TagManager:
   - House3_Entrance
   - Dungeon_Entrance
   - House2_Exit
+  - DungeonLobby_Entrance
+  - Shop_Exit
+  - Shop_Entrance
+  - DungeonLobby_Exit
+  - PNJ
   layers:
   - Default
   - TransparentFX

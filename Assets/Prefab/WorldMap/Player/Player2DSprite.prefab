@@ -101,6 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   IsFighting: 0
+  IsWorldPlayer: 0
+  Anim: {fileID: 0}
+  Running: {fileID: 0}
+  Sound: {fileID: 0}
 --- !u!58 &8823606560678173441
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,8 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33e7d800d9c33f4691f7c4cba36c503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastPosition: {x: 0, y: 0, z: 0}
-  SpawnExitHouse1: {fileID: 8823606560678173454}
 --- !u!1 &8823606560898639143
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool IsWorldPlayer = false;
     public Animator Anim;
+    private bool IsFlipped;
 
     public AudioClip Running;
     public AudioSource Sound;
 
-    
+
     void Start()
     {
         Sound = GetComponent<AudioSource>();
@@ -29,22 +30,46 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (!IsFighting)
+        float moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
+        float moveVertical = Input.GetAxisRaw("Vertical") * speed;
+
+        rb.velocity = new Vector2(moveHorizontal, moveVertical);
+
+        if (moveVertical > 0)
         {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
-
-            float moveVertical = Input.GetAxisRaw("Vertical") * speed;
-
-            rb.velocity = new Vector2(moveHorizontal, moveVertical);
+            Anim.SetBool("IsGoingUp", true);
+        }
+        else if (moveVertical <= 0)
+        {
+            Anim.SetBool("IsGoingUp", false);
         }
 
-        if(rb.velocity != new Vector2(0,0) && Sound.isPlaying == false)
+        if (moveHorizontal < 0)
         {
-            PlaySound();
-            Debug.Log("Running");
+            Flip();
+            IsFlipped = false;
+        }
+        else if (moveHorizontal > 0)
+        {
+            Flip();
+            IsFlipped = true;
+        }
+
+
+        if(rb.velocity != new Vector2(0,0) && Anim.GetBool("IsGoingUp") == false)
+        {
+            Anim.SetBool("Run", true);
+
+            if (Sound.isPlaying == false)
+            {
+                PlaySound();
+                Debug.Log("Running");
+            }
+
         }
         else if(rb.velocity == new Vector2(0, 0))
         {
+            Anim.SetBool("Run", false);
             StopSound();
             Debug.Log("not running");
         }
@@ -55,6 +80,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Sound.PlayOneShot(Running);
 
+    }
+
+    private void Flip()
+    {
+        if (!IsFlipped)
+            GetComponent<SpriteRenderer>().flipX = true;
+        else
+            GetComponent<SpriteRenderer>().flipX = false;
+
+        ///transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 
     private void StopSound()

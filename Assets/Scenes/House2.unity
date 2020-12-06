@@ -777,6 +777,7 @@ MonoBehaviour:
   ImagePotion: {fileID: 0}
   CollideWithPnj: 0
   compteurDialogue: 0
+  GotBackPack: 0
 --- !u!1001 &199238038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3009,8 +3010,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tu tombes bien demi-portion,\nva faire du m\xE9nage dans le donjon et
-    je ferais en sorte que ton bateau soit r\xE9par\xE9."
+  m_Text: "Tu tombes bien demi-portion, rend toi au donjon, gagne contre le champion
+    et je ferai en sorte que ton bateau soit r\xE9par\xE9."
 --- !u!222 &586350788
 CanvasRenderer:
   m_ObjectHideFlags: 0

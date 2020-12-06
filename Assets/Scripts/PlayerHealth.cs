@@ -59,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead", true);
+        currentHealth = maxHealth;
         fightManager.LoadGameOverScene();
 
         return;

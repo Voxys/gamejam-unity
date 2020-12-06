@@ -21,6 +21,8 @@ TagManager:
   - PNJ
   - Marchande
   - DungeonDoorExit
+  - Rocher
+  - Bateau
   layers:
   - Default
   - TransparentFX

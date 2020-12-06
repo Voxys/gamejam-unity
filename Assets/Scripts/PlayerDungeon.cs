@@ -15,7 +15,7 @@ public class PlayerDungeon : MonoBehaviour
             GameManager.Instance.IncrementNumberOfVisitedRoom();
             LoadNextLevel();
         }
-        else if(collider.gameObject.tag == "DungeonDoor" && GameManager.Instance.GetNumberOfVisitedRoom() >= RoomBeforeBoss)
+        else if(collider.gameObject.tag == "DungeonDoor" || collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() >= RoomBeforeBoss)
         {
             LoadBossLevel();
         }
@@ -25,10 +25,10 @@ public class PlayerDungeon : MonoBehaviour
         {
             LoadWorldMap();
         }
-        else if (collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() > 0)
+        else if (collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() < RoomBeforeBoss)
         {
-            LoadNextLevel();
             GameManager.Instance.IncrementNumberOfVisitedRoom();
+            LoadNextLevel();
         }
     }
 

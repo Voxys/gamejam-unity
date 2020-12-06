@@ -14,11 +14,10 @@ public class EnemySpells : MonoBehaviour
     EnemyHealth health;
     private bool isBusy = false;
     public float WaitingTimeAfterAttack;
-    //public FightManager fightManager;
 
     private void Awake()
     {
-        //fightManager = GetComponent<FightManager>();
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         health = GetComponent <EnemyHealth>();
         animator = GetComponent<Animator>();
         initialePosition = transform.position;

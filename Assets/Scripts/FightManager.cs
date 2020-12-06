@@ -8,10 +8,13 @@ public class FightManager : MonoBehaviour
     public GameObject menuGameOver;
     public GameObject menuWin;
     public GameObject[] backgroundList;
+    public GameObject[] DungeonMonsterList;
     private Scene activeScene;
 
     private void Awake()
     {
+        // Charger le bon bakcground en fonction de la scène active
+        // Charger le bon monstre en fonction de la scène active et un peu de hasard
         foreach (var background in backgroundList)
         {
             background.SetActive(false);
@@ -22,11 +25,17 @@ public class FightManager : MonoBehaviour
         if (activeScene.name == "WorldMap")
             backgroundList[0].SetActive(true);
         if (activeScene.name == "Dungeon")
+        {
             backgroundList[1].SetActive(true);
+            Instantiate(DungeonMonsterList[Random.Range(0,1)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
+        }
         if (activeScene.name == "BossRoom")
             backgroundList[2].SetActive(true);
         if (activeScene.name == "FightScene")
-            backgroundList[1].SetActive(true);
+        {
+            backgroundList[2].SetActive(true);
+            Instantiate(DungeonMonsterList[Random.Range(0, 1)], new Vector3(4.41f, -1f, 0), Quaternion.identity);
+        }
     }
 
     private void Start()

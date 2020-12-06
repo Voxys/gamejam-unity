@@ -8,7 +8,8 @@ public class PlayerSpells : MonoBehaviour
     private Animator animator;
     private Vector3 initialePosition;
     private bool isFlipped = false;
-    public int DamageAtt1 = 35;
+    public int minDamageAtt1 = 25;
+    public int maxDamageAtt1 = 35;
     public GameObject healingAnimation;
     public GameObject shieldAnimation;
     private int nbShield;
@@ -24,6 +25,11 @@ public class PlayerSpells : MonoBehaviour
         shieldAnimation.SetActive(false);
         animator = GetComponent<Animator>();
         initialePosition = transform.position;
+    }
+
+    private void Start()
+    {
+        target = GameObject.FindWithTag("Monster").GetComponent<Transform>();
     }
 
     public void Update()
@@ -58,7 +64,7 @@ public class PlayerSpells : MonoBehaviour
         animator.SetTrigger("Attack");
 
         yield return new WaitForSeconds(0.2f);
-        target.GetComponent<EnemyHealth>().TakeDamage(DamageAtt1);
+        target.GetComponent<EnemyHealth>().TakeDamage(Random.Range(minDamageAtt1, maxDamageAtt1));
         yield return new WaitForSeconds(0.3f);
 
         Flip();

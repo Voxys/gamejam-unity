@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
+        fightManager = GameObject.FindWithTag("fightManager").GetComponent<FightManager>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);

@@ -7,6 +7,27 @@ public class FightManager : MonoBehaviour
 
     public GameObject menuGameOver;
     public GameObject menuWin;
+    public GameObject[] backgroundList;
+    private Scene activeScene;
+
+    private void Awake()
+    {
+        foreach (var background in backgroundList)
+        {
+            background.SetActive(false);
+        }
+
+        activeScene = SceneManager.GetActiveScene();
+
+        if (activeScene.name == "WorldMap")
+            backgroundList[0].SetActive(true);
+        if (activeScene.name == "Dungeon")
+            backgroundList[1].SetActive(true);
+        if (activeScene.name == "BossRoom")
+            backgroundList[2].SetActive(true);
+        if (activeScene.name == "FightScene")
+            backgroundList[1].SetActive(true);
+    }
 
     private void Start()
     {

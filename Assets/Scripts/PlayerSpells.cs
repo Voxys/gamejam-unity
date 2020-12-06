@@ -111,7 +111,7 @@ public class PlayerSpells : MonoBehaviour
         if (nbShield < nbMaxShield && turn == "Player")
         {
             isBusy = true;
-            target.gameObject.GetComponent<GoblinSpells>().WeakAttack();
+            target.gameObject.GetComponent<EnemySpells>().WeakAttack();
             StartCoroutine(ShieldSpellAnim());
             nbShield++;
         }

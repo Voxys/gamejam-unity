@@ -94,6 +94,7 @@ public class FightManager : MonoBehaviour
             SceneManager.LoadScene("Dungeon");
             GameManager.Instance.ActivateUI();
             GameManager.Instance.IncrementKillCounter();
+            GameManager.Instance.IncrementGoldAmount(25);
         }
         else
         {

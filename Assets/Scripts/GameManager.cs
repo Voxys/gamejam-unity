@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerHealth = 100;
-        GoldAmount = 50;
+        GoldAmount = 100;
         PotionAmount = 0;
         PotionForceAmount = 0;
 
@@ -131,9 +131,9 @@ public class GameManager : MonoBehaviour
 
     //----------------------------------//
 
-    public void IncrementGoldAmount()
+    public void IncrementGoldAmount(int Amount)
     {
-        GoldAmount += 10;
+        GoldAmount += Amount;
     }
 
     public void DecrementGoldAmount(int GoldCost)
@@ -153,7 +153,6 @@ public class GameManager : MonoBehaviour
     public void IncrementPotionAmount()
     {
         PotionAmount++;
-        PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
     }
 
     public void DecrementPotionAmount()
@@ -169,7 +168,6 @@ public class GameManager : MonoBehaviour
     public void IncrementPotionForceAmount()
     {
         PotionForceAmount++;
-        PotionForceUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
     }
 
     public void DecrementPotionForceAmount()

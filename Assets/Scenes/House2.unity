@@ -775,6 +775,7 @@ MonoBehaviour:
   Dialogue1: {fileID: 586350785}
   Dialogue2: {fileID: 907462283}
   ImagePotion: {fileID: 0}
+  ImagePotionForce: {fileID: 0}
   CollideWithPnj: 0
   compteurDialogue: 0
   GotBackPack: 0
@@ -3246,8 +3247,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tu tombes bien demi-portion, rend toi au donjon, gagne contre le champion
-    et je ferai en sorte que ton bateau soit r\xE9par\xE9."
+  m_Text: "Tu tombes bien demi-portion, rend toi au donjon et fait du m\xE9nage,
+    il parait que personne n'est jamais revenu de la cinqui\xE8me pi\xE8ce.\nJe ferai
+    en sorte que ton bateau soit r\xE9par\xE9."
 --- !u!222 &586350788
 CanvasRenderer:
   m_ObjectHideFlags: 0

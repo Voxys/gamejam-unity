@@ -10,19 +10,19 @@ public class PlayerDungeon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "DungeonDoor")
+        if(collider.gameObject.tag == "DungeonDoor" && GameManager.Instance.GetNumberOfVisitedRoom() < RoomBeforeBoss)
         {
-            LoadNextLevel();
-            GameManager.Instance.NumberOfVisitedRoom++;
-            Debug.Log(GameManager.Instance.NumberOfVisitedRoom);
-        }
 
-        /*
-        else if(collider.gameObject.tag == "DungeonDoor")
+            //GameManager.Instance.NumberOfVisitedRoom++;
+            GameManager.Instance.IncrementNumberOfVisitedRoom();
+            LoadNextLevel();
+            //Debug.Log(GameManager.Instance.NumberOfVisitedRoom);
+        }
+        else if(collider.gameObject.tag == "DungeonDoor" && GameManager.Instance.GetNumberOfVisitedRoom() >= RoomBeforeBoss)
         {
             LoadBossLevel();
         }
-        */
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    
     public GameObject WorldPlayer;
-    public int NumberOfVisitedRoom;
+
+    public static int NumberOfVisitedRoom;
 
     private void Awake()
     {
@@ -22,6 +24,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void IncrementNumberOfVisitedRoom()
+    {
+        NumberOfVisitedRoom++;
+    }
+
+    public int GetNumberOfVisitedRoom()
+    {
+        return NumberOfVisitedRoom;
     }
 
 

@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
             if (Sound.isPlaying == false)
             {
                 PlaySound();
-                Debug.Log("Running");
             }
         }
 
@@ -75,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Anim.SetBool("Run", false);
             StopSound();
-            Debug.Log("not running");
         }
         
     }

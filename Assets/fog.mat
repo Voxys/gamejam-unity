@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_StrangeFog
+  m_Name: fog
   m_Shader: {fileID: -6465566751694194690, guid: c6097bfde41a1d0459f4f688a32b5bc2, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -18,11 +18,14 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_50DB962C: 0
-    - Vector1_823159FB: 0.5
-    - Vector1_B7A4D91D: 0.01
+    - _FogSize: 6
     m_Colors:
-    - Color_7BAD873B: {r: 0.1057316, g: 0.1057316, b: 0.1886792, a: 1}
+    - Color_2874035A: {r: 0.7311854, g: 0.8062873, b: 0.8867924, a: 0}
+    - _FogSpeed: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

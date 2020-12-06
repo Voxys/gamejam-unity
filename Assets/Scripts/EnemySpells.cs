@@ -14,6 +14,9 @@ public class EnemySpells : MonoBehaviour
     EnemyHealth health;
     private bool isBusy = false;
     public float WaitingTimeAfterAttack;
+    public AudioClip Hurt;
+    public AudioClip Sword;
+    public AudioSource Sound;
 
     private void Awake()
     {
@@ -51,9 +54,11 @@ public class EnemySpells : MonoBehaviour
             animator.SetBool("Run", false);
         }
 
+        Sound.PlayOneShot(Sword);
         animator.SetTrigger("Attack");
 
         yield return new WaitForSeconds(0.3f);
+        Sound.PlayOneShot(Hurt);
         PlayerHealth.instance.TakeDamage(attackDamage);
         yield return new WaitForSeconds(WaitingTimeAfterAttack);
 

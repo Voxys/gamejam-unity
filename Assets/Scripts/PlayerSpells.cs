@@ -16,6 +16,10 @@ public class PlayerSpells : MonoBehaviour
     public int nbMaxShield = 1;
     public string turn = "Player";
     private bool isBusy = false;
+    public AudioClip SwordSound;
+    public AudioClip HealSound;
+    public AudioClip ShieldSound;
+    public AudioSource Sound;
 
 
     private void Awake()
@@ -24,6 +28,7 @@ public class PlayerSpells : MonoBehaviour
         healingAnimation.SetActive(false);
         shieldAnimation.SetActive(false);
         animator = GetComponent<Animator>();
+        Sound = GetComponent<AudioSource>();
         initialePosition = transform.position;
     }
 
@@ -62,6 +67,7 @@ public class PlayerSpells : MonoBehaviour
         }
 
         animator.SetTrigger("Attack");
+        Sound.PlayOneShot(SwordSound);
 
         yield return new WaitForSeconds(0.2f);
         target.GetComponent<EnemyHealth>().TakeDamage(Random.Range(minDamageAtt1, maxDamageAtt1));
@@ -96,6 +102,7 @@ public class PlayerSpells : MonoBehaviour
         {
             isBusy = true;
             PlayerHealth.instance.HealPlayer(healing);
+            Sound.PlayOneShot(HealSound);
             StartCoroutine(HealingSpellAnim());
         }
     }
@@ -118,6 +125,7 @@ public class PlayerSpells : MonoBehaviour
         {
             isBusy = true;
             target.gameObject.GetComponent<EnemySpells>().WeakAttack();
+            Sound.PlayOneShot(ShieldSound);
             StartCoroutine(ShieldSpellAnim());
             nbShield++;
         }

@@ -271,6 +271,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7610692940768127254, guid: cfdd8160557e84b4c89295fea4b617e0, type: 3}
   m_PrefabInstance: {fileID: 52177994}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &69509871
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302356, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302361, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_Name
+      value: king
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
 --- !u!1001 &95675365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +663,7 @@ MonoBehaviour:
   ImagePotion: {fileID: 163335461}
   CollideWithPnj: 0
   compteurDialogue: 0
+  GotBackPack: 0
 --- !u!58 &136079331
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6860,7 +6918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500303073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.99, y: 0.15, z: 0}
+  m_LocalPosition: {x: 2.99, y: 0.13, z: 0}
   m_LocalScale: {x: 1.5489249, y: 1.0000002, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6912,7 +6970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508208332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6978,6 +7036,8 @@ MonoBehaviour:
   IsFighting: 0
   IsWorldPlayer: 0
   Anim: {fileID: 0}
+  Running: {fileID: 0}
+  Sound: {fileID: 0}
 --- !u!212 &1508208336
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8483,12 +8543,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10a77e3d84e62043bff03d7c04a0056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CompleteUI: {fileID: 0}
   WorldPlayer: {fileID: 0}
   HealthUI_Text: {fileID: 726098394}
   CoinUI_Text: {fileID: 1427540165}
   PotionUI_Text: {fileID: 815248393}
   BackpackUI: {fileID: 0}
+  BackpackImage: {fileID: 0}
   PotionButton_Backpack: {fileID: 0}
+  HasEnteredDungeon: 0
 --- !u!4 &1894398198
 Transform:
   m_ObjectHideFlags: 0

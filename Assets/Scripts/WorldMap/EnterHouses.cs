@@ -67,6 +67,14 @@ public class EnterHouses : MonoBehaviour
         {
             SceneManager.UnloadSceneAsync("DungeonLobby");
             GameManager.Instance.WorldPlayer.GetComponent<PlayerMovement>().enabled = true;
+
         }
+
+        /*if (collision.gameObject.CompareTag("DungeonDoorExit"))
+        {
+            SceneManager.UnloadSceneAsync("Dungeon");
+            GameManager.Instance.WorldPlayer.GetComponent<PlayerMovement>().enabled = true;
+        }*/
+
     }
 }

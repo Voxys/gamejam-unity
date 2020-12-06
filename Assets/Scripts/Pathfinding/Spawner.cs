@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Villager;
+
     void Start()
     {
-        
+        Instantiate(Villager);
     }
 
     // Update is called once per frame

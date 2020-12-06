@@ -23,6 +23,9 @@ TagManager:
   - DungeonDoorExit
   - Rocher
   - Bateau
+  - Despawn
+  - Checkpoint1
+  - Checkpoint2
   layers:
   - Default
   - TransparentFX

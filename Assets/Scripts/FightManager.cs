@@ -13,6 +13,7 @@ public class FightManager : MonoBehaviour
     public GameObject Boss;
     private string activeScene;
     private Vector3 position;
+    private bool FightAgainstBoss = false;
 
     public static FightManager instance;
 
@@ -51,6 +52,7 @@ public class FightManager : MonoBehaviour
         {
             backgroundList[2].SetActive(true);
             Instantiate(Boss, new Vector3(4.97f, -1.75f, 0), Quaternion.identity);
+            FightAgainstBoss = true;
         }
 
         // La scène de création et de tests
@@ -84,12 +86,20 @@ public class FightManager : MonoBehaviour
     }
     IEnumerator WaitBeforeWinScene()
     {
-        yield return new WaitForSeconds(1f);
-        menuWin.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Dungeon");
-        GameManager.Instance.ActivateUI();
-        GameManager.Instance.IncrementKillCounter();
+        if (FightAgainstBoss == false)
+        {
+            yield return new WaitForSeconds(1f);
+            menuWin.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("Dungeon");
+            GameManager.Instance.ActivateUI();
+            GameManager.Instance.IncrementKillCounter();
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("EndMenu");
+        }        
     }
 
 

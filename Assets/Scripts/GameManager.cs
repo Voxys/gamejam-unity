@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         return NumberOfVisitedRoom;
     }
 
+    public void SetActiveScene(Scene a_scene)
+    {
+        SceneActive = a_scene;
+    }
+
     public Scene GetSceneActive()
     {
         return SceneActive;

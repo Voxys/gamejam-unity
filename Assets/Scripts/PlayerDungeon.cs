@@ -36,7 +36,8 @@ public class PlayerDungeon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            GameManager.Instance.SceneActive = SceneManager.GetActiveScene();
+
+            GameManager.Instance.SetActiveScene(SceneManager.GetActiveScene());
             SceneManager.LoadScene("FightScene");
             Debug.Log("Fight Begin");
         }

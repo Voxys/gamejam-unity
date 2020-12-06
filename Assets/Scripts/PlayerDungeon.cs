@@ -12,17 +12,23 @@ public class PlayerDungeon : MonoBehaviour
     {
         if(collider.gameObject.tag == "DungeonDoor" && GameManager.Instance.GetNumberOfVisitedRoom() < RoomBeforeBoss)
         {
-
-            //GameManager.Instance.NumberOfVisitedRoom++;
             GameManager.Instance.IncrementNumberOfVisitedRoom();
             LoadNextLevel();
-            //Debug.Log(GameManager.Instance.NumberOfVisitedRoom);
         }
         else if(collider.gameObject.tag == "DungeonDoor" && GameManager.Instance.GetNumberOfVisitedRoom() >= RoomBeforeBoss)
         {
             LoadBossLevel();
         }
-        
+
+        // Si le joueur collide avec la "sortie et qu'il est dans la première salle"
+        if(collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() == 0)
+        {
+            LoadWorldMap();
+        }
+        else if (collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() > 0)
+        {
+            LoadNextLevel();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,5 +48,10 @@ public class PlayerDungeon : MonoBehaviour
     private void LoadBossLevel()
     {
         SceneManager.LoadScene("Assets/Scenes/BossRoom.unity");
+    }
+
+    private void LoadWorldMap()
+    {
+        SceneManager.LoadScene("Assets/Scenes/WorldMap.unity");
     }
 }

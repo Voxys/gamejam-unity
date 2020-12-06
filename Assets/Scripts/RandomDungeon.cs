@@ -10,6 +10,7 @@ public class RandomDungeon : MonoBehaviour
     public GameObject Door;
     public GameObject[] Monsters;
     public int MaxProps;
+    public float MonsterSpawnDelay;
 
     [SerializeField]
     private int MaxMonsters;
@@ -18,7 +19,8 @@ public class RandomDungeon : MonoBehaviour
     {
         FillFloor();
         RandomFill();
-        InstantiateRandomMonster();
+        StartCoroutine(InstantiateRandomMonster());
+        
     }
 
     private void FillFloor()
@@ -61,10 +63,12 @@ public class RandomDungeon : MonoBehaviour
         Instantiate(t_Prop, t_pos, Quaternion.identity);
     }
 
-    private void InstantiateRandomMonster()
+    private IEnumerator InstantiateRandomMonster()
     {
         int t_NumberOfMonster = Random.Range(1, MaxMonsters);
         int t_RandomChosenMonster = Random.Range(0, Monsters.Length);
+
+        yield return new WaitForSeconds(MonsterSpawnDelay);
 
         for (int i = 0; i < t_NumberOfMonster; i++)
         {

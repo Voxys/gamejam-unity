@@ -99,7 +99,7 @@ public class FightManager : MonoBehaviour
     private void Retry()
     {
         // retour au début
-        SceneManager.LoadScene("WorldMap");
+        SceneManager.LoadScene("WorldMapWithoutGameManager&UI");
     }
 
 }

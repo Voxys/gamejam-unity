@@ -20,13 +20,15 @@ public class PlayerHealth : MonoBehaviour
     {
         //fightManager.GetComponent<FightManager>();
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //currentHealth = maxHealth;
+        InitHealth();
+        healthBar.SetHealth(currentHealth);
+        Debug.Log("START");
     }
 
     private void Update()
     {
-
+        GameManager.Instance.SetPlayerHealth(currentHealth);
     }
 
     public void TakeDamage(int damage)
@@ -61,4 +63,11 @@ public class PlayerHealth : MonoBehaviour
 
         return;
     }
+    
+    public void InitHealth()
+    {
+        currentHealth = GameManager.Instance.GetPlayerHealth();
+        healthBar.SetHealth(currentHealth);
+    }
+
 }

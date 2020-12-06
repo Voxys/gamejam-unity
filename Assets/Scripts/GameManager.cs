@@ -108,6 +108,11 @@ public class GameManager : MonoBehaviour
         PlayerHealth -= damage;
     }
 
+    public void SetPlayerHealth(int health)
+    {
+        PlayerHealth = health;
+    }
+
     //----------------------------------//
 
     public void IncrementGoldAmount()

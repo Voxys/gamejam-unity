@@ -28,7 +28,7 @@ public class PlayerSpells : MonoBehaviour
 
     public void Update()
     {
-
+        
     }
 
     [ContextMenu("Normal Attack")]

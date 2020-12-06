@@ -11,12 +11,14 @@ public class GoblinSpells : MonoBehaviour
     public bool timeToFight = false;
     public GameObject healthBar;
     public int attackDamage;
-    EnemyHealth enemyHealth;
+    EnemyHealth health;
     private bool isBusy = false;
+    //public FightManager fightManager;
 
     private void Awake()
     {
-        enemyHealth = GetComponent <EnemyHealth>();
+        //fightManager = GetComponent<FightManager>();
+        health = GetComponent <EnemyHealth>();
         animator = GetComponent<Animator>();
         initialePosition = transform.position;
     }
@@ -28,13 +30,11 @@ public class GoblinSpells : MonoBehaviour
 
     public void Update()
     {
-        if (target.gameObject.GetComponent<PlayerSpells>().turn == "Enemy" && enemyHealth.isDead == false && !isBusy)
+        if (target.gameObject.GetComponent<PlayerSpells>().turn == "Enemy" && health.isDead == false && !isBusy && target.gameObject.GetComponent<PlayerHealth>().currentHealth > 0)
         {
             isBusy = true;
             Normal_Attack();
-        }
-        
-            
+        }            
     }
 
     IEnumerator Cr_Attack()

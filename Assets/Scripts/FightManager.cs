@@ -1,24 +1,52 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FightManager : MonoBehaviour
 {
-    public string turn = "Player";
-    public PlayerSpells playerSpells;
 
-    public void Update()
+    public GameObject menuGameOver;
+    public GameObject menuWin;
+
+    private void Start()
     {
-        if (turn == "Player")
-        {
-            // je peux appeller les spells du joueur
-            playerSpells.Normal_Attack();
-
-            turn = "Enemy";
-        }
-        else
-        {
-            
-        }
+        menuGameOver.SetActive(false);
+        menuWin.SetActive(false);
     }
+
+    public void LoadGameOverScene()
+    {
+        StartCoroutine(WaitBeforeGameOverScene());
+    }
+
+    public void LoadWinScene()
+    {
+        StartCoroutine(WaitBeforeWinScene());
+    }
+
+    IEnumerator WaitBeforeGameOverScene()
+    {
+        yield return new WaitForSeconds(1f);
+        menuGameOver.SetActive(true);
+    }
+    IEnumerator WaitBeforeWinScene()
+    {
+        yield return new WaitForSeconds(1f);
+        menuWin.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.UnloadSceneAsync("FightScene");
+    }
+
+
+    private void ExitTheGame()
+    {
+        Application.Quit();
+    }
+
+    private void Retry()
+    {
+        // retour au début
+        SceneManager.LoadScene("WorldMap");
+    }
+
 }

@@ -4,8 +4,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int damage = 15;
     public bool isDead = false;
+    public FightManager fightManager;
 
     public HealthBar healthBar;
     private Animator animator;
@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        //fightManager.GetComponent<FightManager>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -56,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead", true);
+        fightManager.LoadGameOverScene();
 
         return;
     }

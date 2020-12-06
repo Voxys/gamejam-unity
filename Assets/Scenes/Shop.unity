@@ -1984,7 +1984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.31333333, z: -1.443}
+  m_LocalPosition: {x: -0.01, y: 0.31333333, z: -2.8}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 1508208337}
@@ -5227,6 +5227,7 @@ MonoBehaviour:
   speed: 3
   IsFighting: 0
   IsWorldPlayer: 0
+  Anim: {fileID: 0}
 --- !u!212 &1508208336
 SpriteRenderer:
   m_ObjectHideFlags: 0

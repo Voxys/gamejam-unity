@@ -10,8 +10,9 @@ public class ButtonSelector : MonoBehaviour
 
 	void Start()
 	{
-		Button btn = PlayBtn.GetComponent<Button>();
-		btn.onClick.AddListener(Play);
+		Button btnPlay = PlayBtn.GetComponent<Button>();
+
+		btnPlay.onClick.AddListener(Play);
 	}
 
 	void Play()

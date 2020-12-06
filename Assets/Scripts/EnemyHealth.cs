@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     private Animator animator;
     public bool isDead = false;
+    public FightManager fightManager;
 
     public HealthBar healthBar;
 
@@ -38,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead", true);
+        fightManager.LoadWinScene();
 
         return;
     }

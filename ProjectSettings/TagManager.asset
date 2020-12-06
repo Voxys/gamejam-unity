@@ -19,6 +19,7 @@ TagManager:
   - Shop_Entrance
   - DungeonLobby_Exit
   - PNJ
+  - Marchande
   layers:
   - Default
   - TransparentFX

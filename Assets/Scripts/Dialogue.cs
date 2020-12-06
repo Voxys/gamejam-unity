@@ -38,6 +38,7 @@ public class Dialogue : MonoBehaviour
             CanvasDialogue.SetActive(true);
             GestionMarchande();
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

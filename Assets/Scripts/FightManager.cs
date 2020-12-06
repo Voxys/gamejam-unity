@@ -25,7 +25,7 @@ public class FightManager : MonoBehaviour
             background.SetActive(false);
         }
 
-        activeScene = SceneManager.GetActiveScene();
+        activeScene = GameManager.Instance.GetSceneActive();
 
         // Map de départ
         if (activeScene.name == "WorldMap")
@@ -83,7 +83,7 @@ public class FightManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         menuWin.SetActive(true);
         yield return new WaitForSeconds(1f);
-        SceneManager.UnloadSceneAsync("FightScene");
+        SceneManager.LoadScene("Dungeon");
     }
 
 

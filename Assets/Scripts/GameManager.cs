@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     public GameObject WorldPlayer;
-    public Scene SceneActive;
+    public static Scene SceneActive;
 
     public static int NumberOfVisitedRoom;
 
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
     public int GetNumberOfVisitedRoom()
     {
         return NumberOfVisitedRoom;
+    }
+
+    public Scene GetSceneActive()
+    {
+        return SceneActive;
     }
 
 

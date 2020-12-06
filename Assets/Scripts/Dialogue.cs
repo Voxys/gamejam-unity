@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Dialogue : MonoBehaviour
     public GameObject ImagePotion;
     public bool CollideWithPnj;
     public int compteurDialogue;
+    public bool GotBackPack;
 
     void Start()
     {
@@ -74,6 +76,12 @@ public class Dialogue : MonoBehaviour
         {
             Dialogue1.SetActive(false);
             Dialogue2.SetActive(true);
+
+            if (!GotBackPack)
+            {
+                GotBackPack = true;
+                GameManager.Instance.GiveBackpack();
+            }
         }
 
         if(compteurDialogue == 3)

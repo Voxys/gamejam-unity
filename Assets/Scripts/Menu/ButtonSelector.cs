@@ -17,6 +17,6 @@ public class ButtonSelector : MonoBehaviour
 
 	void Play()
 	{
-		SceneManager.LoadScene("Assets/Scenes/WorldMap.unity");
+		SceneManager.LoadScene("StartScene");
 	}
 }

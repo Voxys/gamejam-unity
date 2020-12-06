@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject PotionUI_Text;
     
     public GameObject BackpackUI;
+    public GameObject BackpackImage;
     public GameObject PotionButton_Backpack;
 
     public bool HasEnteredDungeon;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
 
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
+        BackpackImage.SetActive(false);
 
         
 
@@ -87,6 +89,8 @@ public class GameManager : MonoBehaviour
             PotionButton_Backpack.SetActive(true);
         else
             PotionButton_Backpack.SetActive(false);
+
+        Debug.Log(PlayerHealth);
 
     }
 
@@ -111,6 +115,7 @@ public class GameManager : MonoBehaviour
     public void SetPlayerHealth(int health)
     {
         PlayerHealth = health;
+        Debug.Log("SetHealth Parameter: " + health);
     }
 
     //----------------------------------//
@@ -183,6 +188,11 @@ public class GameManager : MonoBehaviour
     public void CloseBackPack()
     {
         BackpackUI.SetActive(false);
+    }
+
+    public void GiveBackpack()
+    {
+        BackpackImage.SetActive(true);
     }
 
     public void UsePotion()

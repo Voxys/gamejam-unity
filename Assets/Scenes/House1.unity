@@ -7457,6 +7457,7 @@ MonoBehaviour:
   ImagePotion: {fileID: 0}
   CollideWithPnj: 0
   compteurDialogue: 0
+  GotBackPack: 0
 --- !u!1 &1821134900
 GameObject:
   m_ObjectHideFlags: 0
@@ -8647,7 +8648,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "On a du travail pour toi,\nrend toi \xE0 la maison vers l'est, tu y rencontreras
-    le commandant."
+    le commandant.\nPrends ce sac et ses quelques pi\xE9ces, cadeau de bienvenue. "
 --- !u!222 &2015258383
 CanvasRenderer:
   m_ObjectHideFlags: 0

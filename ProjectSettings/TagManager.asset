@@ -67,11 +67,11 @@ TagManager:
   - name: Wall
     uniqueID: 3262125931
     locked: 0
-  - name: Monster
-    uniqueID: 615982867
-    locked: 0
   - name: Player
     uniqueID: 3839070307
+    locked: 0
+  - name: Monster
+    uniqueID: 615982867
     locked: 0
   - name: Effect
     uniqueID: 2974474581

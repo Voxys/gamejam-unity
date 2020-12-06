@@ -2825,7 +2825,7 @@ MonoBehaviour:
   - {fileID: 3080548061113585170, guid: 692b329faa896cb4e8185c8488452429, type: 3}
   WorldMapMonsterList:
   - {fileID: 3769607178098050348, guid: f61f2664ca62ed04589bdcd64a0e5860, type: 3}
-  Boss: {fileID: 0}
+  Boss: {fileID: 4777062536332616708, guid: 6ea9f6782a6b204439168e84a288afbf, type: 3}
 --- !u!1 &1784108693
 GameObject:
   m_ObjectHideFlags: 0

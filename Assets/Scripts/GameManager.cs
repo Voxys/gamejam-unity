@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public GameObject HealthUI_Text;
     public GameObject CoinUI_Text;
     public GameObject PotionUI_Text;
-    
+    public GameObject PotionForceUI_Text;
+
     public GameObject BackpackUI;
     public GameObject BackpackImage;
     public GameObject PotionButton_Backpack;
+    public GameObject PotionForceButton_Backpack;
 
     public bool HasEnteredDungeon;
 
@@ -27,9 +29,9 @@ public class GameManager : MonoBehaviour
     public static int PlayerHealth;
     public static int GoldAmount;
     public static int PotionAmount;
+    public static int PotionForceAmount;
     public static int NumberOfVisitedRoom;
     public static int KillCounter;
-
 
 
     //----------------------------------//
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
         PlayerHealth = 100;
         GoldAmount = 50;
         PotionAmount = 0;
-        
+
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
         PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
@@ -72,6 +74,11 @@ public class GameManager : MonoBehaviour
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
         BackpackImage.SetActive(false);
+
+
+
+
+        Debug.Log("ok" + this.gameObject);
     }
 
 
@@ -85,6 +92,13 @@ public class GameManager : MonoBehaviour
             PotionButton_Backpack.SetActive(true);
         else
             PotionButton_Backpack.SetActive(false);
+
+        if (PotionForceAmount >= 1)
+            PotionForceButton_Backpack.SetActive(true);
+        else
+            PotionForceButton_Backpack.SetActive(false);
+
+        Debug.Log(PlayerHealth);
 
     }
 
@@ -116,12 +130,12 @@ public class GameManager : MonoBehaviour
 
     public void IncrementGoldAmount()
     {
-        GoldAmount+=10;
+        GoldAmount += 10;
     }
 
     public void DecrementGoldAmount()
     {
-        GoldAmount-= 10;
+        GoldAmount -= 10;
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
         Debug.Log(GoldAmount);
     }
@@ -148,6 +162,23 @@ public class GameManager : MonoBehaviour
     public int GetPotionAmount()
     {
         return PotionAmount;
+    }
+
+    public void IncrementPotionForceAmount()
+    {
+        PotionForceAmount++;
+        PotionUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
+        Debug.Log(PotionAmount);
+    }
+
+    public void DecrementPotionForceAmount()
+    {
+        PotionForceAmount--;
+    }
+
+    public int GetPotionForceAmount()
+    {
+        return PotionForceAmount;
     }
 
     //----------------------------------//

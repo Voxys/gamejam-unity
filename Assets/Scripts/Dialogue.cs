@@ -54,6 +54,7 @@ public class Dialogue : MonoBehaviour
             CanvasDialogue.SetActive(false);
             ImagePotion.SetActive(false);
             compteurDialogue = 0;
+            Debug.Log("Exit" + compteurDialogue);
     }
 
     public void GestionDialogue()
@@ -61,6 +62,7 @@ public class Dialogue : MonoBehaviour
         compteurDialogue++;
 
         Debug.Log("IsClicked");
+        Debug.Log(compteurDialogue);
 
         if (compteurDialogue == 1)
         {
@@ -77,6 +79,7 @@ public class Dialogue : MonoBehaviour
         if(compteurDialogue == 3)
         {
             CanvasDialogue.SetActive(false);
+            compteurDialogue = 0;
         }
     }
 

@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject WorldPlayer;
     public static Scene SceneActive;
     public static string scene;
-
+    public static int PlayerHealth;
+    public static int GoldAmount;
+    public static int PotionAmount;
     public static int NumberOfVisitedRoom;
 
     private void Awake()
@@ -20,7 +22,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        PlayerHealth = 100;
+        GoldAmount = 100;
     }
 
     
@@ -28,6 +31,60 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    //----------------------------------//
+
+
+    public int GetPlayerHealth()
+    {
+        return PlayerHealth;
+    }
+
+    public void HealPlayer()
+    {
+        PlayerHealth += 20;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        PlayerHealth -= damage;
+    }
+
+    //----------------------------------//
+
+    public void IncrementGoldAmount()
+    {
+        GoldAmount+=10;
+    }
+
+    public void DecrementGoldAmount()
+    {
+        GoldAmount-= 10;
+    }
+
+    public int GetGoldAmount()
+    {
+        return GoldAmount;
+    }
+
+    //----------------------------------//
+
+    public void IncrementPotionAmount()
+    {
+        GoldAmount++;
+    }
+
+    public void DecrementPotionAmount()
+    {
+        GoldAmount--;
+    }
+
+    public int GetPotionAmount()
+    {
+        return PotionAmount;
+    }
+
+    //----------------------------------//
 
     public void IncrementNumberOfVisitedRoom()
     {
@@ -38,6 +95,8 @@ public class GameManager : MonoBehaviour
     {
         return NumberOfVisitedRoom;
     }
+
+    //----------------------------------//
 
     public void SetActiveScene(Scene a_scene)
     {

@@ -24,6 +24,7 @@ public class Dialogue : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && CollideWithPnj)
         {
             CanvasDialogue.SetActive(true);
+            GestionDialogue();
         }
     }
 
@@ -41,21 +42,31 @@ public class Dialogue : MonoBehaviour
             CollideWithPnj = false;
             BulleDialogue.SetActive(false);
             CanvasDialogue.SetActive(false);
+
+            compteurDialogue = 0;
     }
 
     public void GestionDialogue()
     {
         compteurDialogue++;
 
+        Debug.Log("IsClicked");
+
         if (compteurDialogue == 1)
         {
             Dialogue1.SetActive(true);
+            Dialogue2.SetActive(false);
         }
 
         if(compteurDialogue == 2)
         {
             Dialogue1.SetActive(false);
             Dialogue2.SetActive(true);
+        }
+
+        if(compteurDialogue == 3)
+        {
+            CanvasDialogue.SetActive(false);
         }
     }
 }

@@ -28,6 +28,7 @@ public class PlayerDungeon : MonoBehaviour
         else if (collider.gameObject.tag == "DungeonDoorExit" && GameManager.Instance.GetNumberOfVisitedRoom() > 0)
         {
             LoadNextLevel();
+            GameManager.Instance.IncrementNumberOfVisitedRoom();
         }
     }
 
@@ -35,7 +36,8 @@ public class PlayerDungeon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            SceneManager.LoadScene("Assets/Scenes/FightScene.unity");
+            GameManager.Instance.SceneActive = SceneManager.GetActiveScene();
+            SceneManager.LoadScene("FightScene");
             Debug.Log("Fight Begin");
         }
     }

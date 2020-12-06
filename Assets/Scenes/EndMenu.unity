@@ -712,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RetryBtn: {fileID: 384374586}
+  QuitBtn: {fileID: 964876969}
 --- !u!1 &1969941695
 GameObject:
   m_ObjectHideFlags: 0

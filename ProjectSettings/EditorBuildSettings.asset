@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WorldMapWithoutGameManager&UI.unity
     guid: 0d3349d7c33f5524cbefbd46910067bc
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 5600f08500801ff41b13d2cd44ebdfd7
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 286410209fbc32940bf2ce3ffaabbbc7
   m_configObjects: {}

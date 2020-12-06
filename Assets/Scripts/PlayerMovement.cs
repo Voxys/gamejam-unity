@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(rb.velocity != new Vector2(0,0))
         {
-            Anim.SetTrigger("Run");
+            //Anim.SetTrigger("Run");
         }
         else if(rb.velocity == new Vector2(0, 0))
         {

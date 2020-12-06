@@ -2390,7 +2390,7 @@ MonoBehaviour:
   - {fileID: 4896756419342872259, guid: a1f3fe0660a5d244198809d27c93832d, type: 3}
   - {fileID: 4470486908809920484, guid: 8111a283ca0170549b05c5fb40ef0357, type: 3}
   - {fileID: 6092151943614723766, guid: 7af8d4c79a4a2a34ca6569f21a6d4ecb, type: 3}
-  SelectedTileId: 11
+  SelectedTileId: 0
 --- !u!4 &940597777
 Transform:
   m_ObjectHideFlags: 0
@@ -3748,6 +3748,7 @@ MonoBehaviour:
   speed: 8
   IsFighting: 0
   IsWorldPlayer: 0
+  Anim: {fileID: 1311400933}
 --- !u!50 &1311400930
 Rigidbody2D:
   serializedVersion: 4

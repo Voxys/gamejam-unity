@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRoom.unity
     guid: 0ca5fe8beaa5d5e42ba122e77bf389a6
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 286410209fbc32940bf2ce3ffaabbbc7
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 5600f08500801ff41b13d2cd44ebdfd7
   m_configObjects: {}

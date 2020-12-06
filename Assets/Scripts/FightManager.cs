@@ -88,6 +88,7 @@ public class FightManager : MonoBehaviour
         menuWin.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Dungeon");
+        GameManager.Instance.ActivateUI();
     }
 
 

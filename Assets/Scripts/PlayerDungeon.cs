@@ -39,6 +39,7 @@ public class PlayerDungeon : MonoBehaviour
 
             GameManager.Instance.SetActiveScene(SceneManager.GetActiveScene());
             SceneManager.LoadScene("FightScene");
+            GameManager.Instance.HideUI();
         }
     }
 

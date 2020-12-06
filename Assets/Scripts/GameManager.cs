@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public static int GoldAmount;
     public static int PotionAmount;
     public static int NumberOfVisitedRoom;
+    public static int KillCounter;
 
 
 
@@ -180,6 +181,8 @@ public class GameManager : MonoBehaviour
         return scene;
     }
 
+    //----------------------------------//
+
     public void OpenBackpack()
     {
         BackpackUI.SetActive(true);
@@ -201,8 +204,34 @@ public class GameManager : MonoBehaviour
         HealPlayer();
     }
 
+    //----------------------------------//
+
     public void DestroyUI()
     {
         Destroy(CompleteUI);
     }
+    public void ActivateUI()
+    {
+        CompleteUI.SetActive(true);
+    }
+
+    public void HideUI()
+    {
+        CompleteUI.SetActive(false);
+    }
+
+    //----------------------------------//
+
+    public int GetKillCounter()
+    {
+        return KillCounter;
+    }
+
+    public void IncrementKillCounter()
+    {
+        KillCounter++;
+    }
+
+
+
 }

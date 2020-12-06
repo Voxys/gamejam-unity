@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDungeon : MonoBehaviour
 {
+    public int RoomBeforeBoss;
     public LevelLoad levelLoader;
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -12,9 +13,16 @@ public class PlayerDungeon : MonoBehaviour
         if(collider.gameObject.tag == "DungeonDoor")
         {
             LoadNextLevel();
-            //levelLoader.LoadNextLevel();
-            Debug.Log("NextRoom");
+            GameManager.Instance.NumberOfVisitedRoom++;
+            Debug.Log(GameManager.Instance.NumberOfVisitedRoom);
         }
+
+        /*
+        else if(collider.gameObject.tag == "DungeonDoor")
+        {
+            LoadBossLevel();
+        }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,5 +37,10 @@ public class PlayerDungeon : MonoBehaviour
     private void LoadNextLevel()
     {
         SceneManager.LoadScene("Assets/Scenes/Dungeon.unity");
+    }
+
+    private void LoadBossLevel()
+    {
+        SceneManager.LoadScene("Assets/Scenes/BossRoom.unity");
     }
 }

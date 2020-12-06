@@ -3707,7 +3707,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -455896989
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 0e3502a80399d164ea01f1868f65acbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3748,10 +3748,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15541b288f6b9f46b9021190f5607bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 4
   IsFighting: 0
   IsWorldPlayer: 0
   Anim: {fileID: 1311400933}
+  Running: {fileID: 8300000, guid: 11b9c5ca85929a544bc2bbc19a6fd5c3, type: 3}
+  Sound: {fileID: 1311400934}
 --- !u!50 &1311400930
 Rigidbody2D:
   serializedVersion: 4
@@ -4195,12 +4197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10a77e3d84e62043bff03d7c04a0056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CompleteUI: {fileID: 0}
   WorldPlayer: {fileID: 0}
   HealthUI_Text: {fileID: 0}
   CoinUI_Text: {fileID: 0}
   PotionUI_Text: {fileID: 0}
   BackpackUI: {fileID: 0}
   PotionButton_Backpack: {fileID: 0}
+  HasEnteredDungeon: 0
 --- !u!4 &1472053450
 Transform:
   m_ObjectHideFlags: 0

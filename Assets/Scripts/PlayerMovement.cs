@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool IsWorldPlayer = false;
     public Animator Anim;
-    private AudioSource Sound;
+
+    public AudioClip Running;
+    public AudioSource Sound;
 
     
     void Start()
@@ -36,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(moveHorizontal, moveVertical);
         }
 
-        if(rb.velocity != new Vector2(0,0))
+        if(rb.velocity != new Vector2(0,0) && Sound.isPlaying == false)
         {
             PlaySound();
             Debug.Log("Running");
@@ -51,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlaySound()
     {
-        Sound.Play();
+        Sound.PlayOneShot(Running);
+
     }
 
     private void StopSound()

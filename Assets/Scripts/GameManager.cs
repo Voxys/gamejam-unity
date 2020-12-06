@@ -66,10 +66,12 @@ public class GameManager : MonoBehaviour
         PlayerHealth = 100;
         GoldAmount = 50;
         PotionAmount = 0;
+        PotionForceAmount = 0;
 
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
         PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
+        PotionForceUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
 
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
         PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
+        PotionForceUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
 
         if (PotionAmount >= 1)
             PotionButton_Backpack.SetActive(true);
@@ -133,9 +136,9 @@ public class GameManager : MonoBehaviour
         GoldAmount += 10;
     }
 
-    public void DecrementGoldAmount()
+    public void DecrementGoldAmount(int GoldCost)
     {
-        GoldAmount -= 10;
+        GoldAmount -= GoldCost;
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
         Debug.Log(GoldAmount);
     }
@@ -151,7 +154,6 @@ public class GameManager : MonoBehaviour
     {
         PotionAmount++;
         PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
-        Debug.Log(PotionAmount);
     }
 
     public void DecrementPotionAmount()
@@ -167,8 +169,7 @@ public class GameManager : MonoBehaviour
     public void IncrementPotionForceAmount()
     {
         PotionForceAmount++;
-        PotionUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
-        Debug.Log(PotionAmount);
+        PotionForceUI_Text.GetComponent<Text>().text = PotionForceAmount.ToString();
     }
 
     public void DecrementPotionForceAmount()
@@ -224,8 +225,17 @@ public class GameManager : MonoBehaviour
 
     public void UsePotion()
     {
-        DecrementPotionAmount();
-        HealPlayer();
+        if(PlayerHealth < 100)
+        {
+            DecrementPotionAmount();
+            HealPlayer();
+        }
+    }
+
+    public void UsePotionForce()
+    {
+        DecrementPotionForceAmount();
+        //HealPlayer();
     }
 
     //----------------------------------//
@@ -256,6 +266,23 @@ public class GameManager : MonoBehaviour
         KillCounter++;
     }
 
+    public void BuyPotionRed()
+    {
+        if(GoldAmount >= 20)
+        {
+            IncrementPotionAmount();
+            DecrementGoldAmount(20);
+        }
+    }
+
+    public void BuyPotionBlue()
+    {
+        if (GoldAmount >= 50)
+        {
+            IncrementPotionForceAmount();
+            DecrementGoldAmount(50);
+        }
+    }
 
 
 }

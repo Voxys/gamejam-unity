@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public GameObject Dialogue1;
     public GameObject Dialogue2;
     public GameObject ImagePotion;
+    public GameObject ImagePotionForce;
     public bool CollideWithPnj;
     public int compteurDialogue;
     public bool GotBackPack;
@@ -21,9 +22,13 @@ public class Dialogue : MonoBehaviour
         Dialogue1.SetActive(false);
         Dialogue2.SetActive(false);
         ImagePotion.SetActive(false);
+        ImagePotionForce.SetActive(false);
 
         if (ImagePotion == null)
             ImagePotion = new GameObject();
+
+        if (ImagePotionForce == null)
+            ImagePotionForce = new GameObject();
     }
 
     private void Update()
@@ -56,6 +61,7 @@ public class Dialogue : MonoBehaviour
             BulleDialogue.SetActive(false);
             CanvasDialogue.SetActive(false);
             ImagePotion.SetActive(false);
+            ImagePotionForce.SetActive(false);
             compteurDialogue = 0;
             Debug.Log("Exit" + compteurDialogue);
     }
@@ -105,6 +111,7 @@ public class Dialogue : MonoBehaviour
         {
             Dialogue1.SetActive(false);
             ImagePotion.SetActive(true);
+            ImagePotionForce.SetActive(true);
         }
     }
 }

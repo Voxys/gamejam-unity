@@ -20,6 +20,7 @@ TagManager:
   - DungeonLobby_Exit
   - PNJ
   - Marchande
+  - DungeonDoorExit
   layers:
   - Default
   - TransparentFX

@@ -2,18 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     
     public GameObject WorldPlayer;
+    public GameObject HealthUI_Text;
+    public GameObject CoinUI_Text;
+    public GameObject PotionUI_Text;
+    
+    public GameObject BackpackUI;
+    public GameObject PotionButton_Backpack;
+
+
     public static Scene SceneActive;
     public static string scene;
     public static int PlayerHealth;
     public static int GoldAmount;
     public static int PotionAmount;
     public static int NumberOfVisitedRoom;
+
+
+    //----------------------------------//
+    // TODO : BuyPotions
+    //
+    // SI GoldAmount >=10
+    // 
+    //  -> BuyPotions
+    //  ---> DecrementGoldAmount
+    //  ---> IncrementPotionAmount
+    //
+    // TODO : UsePotions
+    // 
+    // SI PotionAmount >= 1
+    //  
+    //  -> UsePotions
+    //  ---> DecrementPotionAmount
+    //  ---> IncrementPlayerHealth
+    //
+    //
+    //----------------------------------//
 
     private void Awake()
     {
@@ -23,13 +54,28 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerHealth = 100;
-        GoldAmount = 100;
+        GoldAmount = 50;
+        PotionAmount = 0;
+        
+        HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
+        CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
+        PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
+
+        BackpackUI.SetActive(false);
+        PotionButton_Backpack.SetActive(false);
     }
 
-    
+
     void Update()
     {
-        
+        HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
+        CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
+        PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
+
+        if (PotionAmount >= 1)
+            PotionButton_Backpack.SetActive(true);
+        else
+            PotionButton_Backpack.SetActive(false);
     }
 
     //----------------------------------//
@@ -60,6 +106,8 @@ public class GameManager : MonoBehaviour
     public void DecrementGoldAmount()
     {
         GoldAmount-= 10;
+        CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
+        Debug.Log(GoldAmount);
     }
 
     public int GetGoldAmount()
@@ -71,12 +119,14 @@ public class GameManager : MonoBehaviour
 
     public void IncrementPotionAmount()
     {
-        GoldAmount++;
+        PotionAmount++;
+        PotionUI_Text.GetComponent<Text>().text = PotionAmount.ToString();
+        Debug.Log(PotionAmount);
     }
 
     public void DecrementPotionAmount()
     {
-        GoldAmount--;
+        PotionAmount--;
     }
 
     public int GetPotionAmount()
@@ -106,6 +156,22 @@ public class GameManager : MonoBehaviour
     public string GetSceneActive()
     {
         return scene;
+    }
+
+    public void OpenBackpack()
+    {
+        BackpackUI.SetActive(true);
+    }
+
+    public void CloseBackPack()
+    {
+        BackpackUI.SetActive(false);
+    }
+
+    public void UsePotion()
+    {
+        DecrementPotionAmount();
+        HealPlayer();
     }
 
 

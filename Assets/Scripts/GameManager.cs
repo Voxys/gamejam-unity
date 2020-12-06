@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     
     public GameObject WorldPlayer;
     public static Scene SceneActive;
+    public static string scene;
 
     public static int NumberOfVisitedRoom;
 
@@ -40,12 +41,12 @@ public class GameManager : MonoBehaviour
 
     public void SetActiveScene(Scene a_scene)
     {
-        SceneActive = a_scene;
+        scene = a_scene.name;
     }
 
-    public Scene GetSceneActive()
+    public string GetSceneActive()
     {
-        return SceneActive;
+        return scene;
     }
 
 

@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 1213960469232302359}
   - component: {fileID: -2242147608219970292}
   - component: {fileID: -6639967481424397455}
+  - component: {fileID: -1983837990752901487}
   m_Layer: 0
   m_Name: king
   m_TagString: Player
@@ -244,7 +245,7 @@ MonoBehaviour:
   IsFighting: 0
   IsWorldPlayer: 0
   Anim: {fileID: 1213960469232302362}
-  Running: {fileID: 0}
+  Running: {fileID: 8300000, guid: 11b9c5ca85929a544bc2bbc19a6fd5c3, type: 3}
   Sound: {fileID: 0}
 --- !u!114 &-2242147608219970292
 MonoBehaviour:
@@ -354,3 +355,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1983837990752901487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213960469232302361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833d46569accf1a418ed9462057eee4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomBeforeBoss: 5
+  levelLoader: {fileID: 0}

@@ -16,18 +16,21 @@ public class EnterHouses : MonoBehaviour
 
         if (collision.gameObject.CompareTag("House1_Entrance"))
         {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             player.enabled = false;
             SceneManager.LoadScene("House1", LoadSceneMode.Additive);
         }
 
         if (collision.gameObject.CompareTag("House2_Entrance"))
         {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             player.enabled = false;
             SceneManager.LoadScene("House2", LoadSceneMode.Additive);
         }
 
         if (collision.gameObject.CompareTag("Shop_Entrance"))
         {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             player.enabled = false;
             SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
         }

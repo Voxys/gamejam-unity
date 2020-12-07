@@ -7138,7 +7138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C'est donc toi le naufrag\xE9 !\nBienvenue sur l'ile de NONE"
+  m_Text: "C'est donc toi le naufrag\xE9 !\nBienvenue sur l'ile myst\xE8rieuse."
 --- !u!222 &1604441755
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7791,6 +7791,7 @@ MonoBehaviour:
   Dialogue1: {fileID: 1604441752}
   Dialogue2: {fileID: 2015258380}
   ImagePotion: {fileID: 0}
+  ImagePotionForce: {fileID: 0}
   CollideWithPnj: 0
   compteurDialogue: 0
   GotBackPack: 0

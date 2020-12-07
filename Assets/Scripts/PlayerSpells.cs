@@ -70,7 +70,10 @@ public class PlayerSpells : MonoBehaviour
         Sound.PlayOneShot(SwordSound);
 
         yield return new WaitForSeconds(0.2f);
-        target.GetComponent<EnemyHealth>().TakeDamage(Random.Range(minDamageAtt1, maxDamageAtt1));
+        if(GameManager.Instance.GetPotionForceUsed())
+            target.GetComponent<EnemyHealth>().TakeDamage(Random.Range(minDamageAtt1 + GameManager.Instance.GetExtraDamage(), maxDamageAtt1 + GameManager.Instance.GetExtraDamage()));
+        else
+            target.GetComponent<EnemyHealth>().TakeDamage(Random.Range(minDamageAtt1, maxDamageAtt1));
         yield return new WaitForSeconds(0.3f);
 
         Flip();

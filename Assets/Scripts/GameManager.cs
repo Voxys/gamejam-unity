@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject PotionForceButton_Backpack;
 
     public bool HasEnteredDungeon;
+    public static bool PotionForceUsed;
 
     public static Scene SceneActive;
     public static string scene;
@@ -32,27 +33,8 @@ public class GameManager : MonoBehaviour
     public static int PotionForceAmount;
     public static int NumberOfVisitedRoom;
     public static int KillCounter;
+    public static int ExtraDamage;
 
-
-    //----------------------------------//
-    // TODO : BuyPotions
-    //
-    // SI GoldAmount >=10
-    // 
-    //  -> BuyPotions
-    //  ---> DecrementGoldAmount
-    //  ---> IncrementPotionAmount
-    //
-    // TODO : UsePotions
-    // 
-    // SI PotionAmount >= 1
-    //  
-    //  -> UsePotions
-    //  ---> DecrementPotionAmount
-    //  ---> IncrementPlayerHealth
-    //
-    //
-    //----------------------------------//
 
     private void Awake()
     {
@@ -67,6 +49,7 @@ public class GameManager : MonoBehaviour
         GoldAmount = 100;
         PotionAmount = 0;
         PotionForceAmount = 0;
+        ExtraDamage = 8;
 
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();
@@ -101,7 +84,7 @@ public class GameManager : MonoBehaviour
         else
             PotionForceButton_Backpack.SetActive(false);
 
-        Debug.Log(PlayerHealth);
+        Debug.Log(WorldPlayer);
 
     }
 
@@ -194,6 +177,32 @@ public class GameManager : MonoBehaviour
 
     //----------------------------------//
 
+    public bool GetPotionForceUsed()
+    {
+        return PotionForceUsed;
+    }
+
+    public void SetPotionForceUsedFalse()
+    {
+        PotionForceUsed = false;
+    }
+
+    public void SetPotionForceUsedTrue()
+    {
+        PotionForceUsed = true;
+    }
+
+    //----------------------------------//
+
+    public int GetExtraDamage()
+    {
+        return ExtraDamage;
+    }
+
+
+    //----------------------------------//
+
+
     public void SetActiveScene(Scene a_scene)
     {
         scene = a_scene.name;
@@ -227,13 +236,16 @@ public class GameManager : MonoBehaviour
         {
             DecrementPotionAmount();
             HealPlayer();
+
+            if (PlayerHealth > 100)
+                PlayerHealth = 100;
         }
     }
 
     public void UsePotionForce()
     {
         DecrementPotionForceAmount();
-        //HealPlayer();
+        PotionForceUsed = true;
     }
 
     //----------------------------------//

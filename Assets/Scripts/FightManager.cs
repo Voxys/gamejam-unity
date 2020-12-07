@@ -16,6 +16,7 @@ public class FightManager : MonoBehaviour
     private bool FightAgainstBoss = false;
 
     public static FightManager instance;
+    public static GameObject WorldPlayer;
 
     private void Awake()
     {
@@ -95,6 +96,7 @@ public class FightManager : MonoBehaviour
             GameManager.Instance.ActivateUI();
             GameManager.Instance.IncrementKillCounter();
             GameManager.Instance.IncrementGoldAmount(25);
+            GameManager.Instance.SetPotionForceUsedFalse();
         }
         else
         {
@@ -112,7 +114,10 @@ public class FightManager : MonoBehaviour
     public void Retry()
     {
         // retour au début
+
         SceneManager.LoadScene("WorldMapWithoutGameManager&UI");
+        GameManager.Instance.ActivateUI();
+        GameManager.Instance.SetPotionForceUsedFalse();
     }
 
 }

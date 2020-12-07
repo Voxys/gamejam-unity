@@ -7,6 +7,7 @@ public class PlayerDungeon : MonoBehaviour
 {
     public int RoomBeforeBoss;
     public LevelLoad levelLoader;
+    private Vector3 PlayerSpawnPosition; 
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -46,15 +47,21 @@ public class PlayerDungeon : MonoBehaviour
     private void LoadNextLevel()
     {
         SceneManager.LoadScene("Assets/Scenes/Dungeon.unity");
+        GameManager.Instance.WorldPlayer.transform.position = GameManager.Instance.DungeonSpawnPosition;
+
     }
 
     private void LoadBossLevel()
     {
         SceneManager.LoadScene("Assets/Scenes/BossRoom.unity");
+        GameManager.Instance.WorldPlayer.transform.position =  GameManager.Instance.DungeonSpawnPosition;
+
     }
 
     private void LoadWorldMap()
     {
         SceneManager.LoadScene("Assets/Scenes/WorldMapWithoutGameManager&UI.unity");
+        GameManager.Instance.WorldPlayer.transform.position = GameManager.Instance.WorldMapSpawnPosition;
+
     }
 }

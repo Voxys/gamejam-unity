@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: king
       objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302361, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_TagString
+      value: King
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
 --- !u!1001 &95675365
@@ -1859,7 +1863,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b7e6961436b05e5488a6e66d54cc2db8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
+  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9750,6 +9754,8 @@ MonoBehaviour:
   CoinUI_Text: {fileID: 1427540165}
   PotionUI_Text: {fileID: 815248393}
   PotionForceUI_Text: {fileID: 0}
+  DungeonSpawnPosition: {x: 0, y: 0, z: 0}
+  WorldMapSpawnPosition: {x: 0, y: 0, z: 0}
   BackpackUI: {fileID: 0}
   BackpackImage: {fileID: 0}
   PotionButton_Backpack: {fileID: 0}

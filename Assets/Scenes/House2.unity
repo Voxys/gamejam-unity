@@ -1550,6 +1550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: king
       objectReference: {fileID: 0}
+    - target: {fileID: 1213960469232302361, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
+      propertyPath: m_TagString
+      value: King
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb7f8c404f129e439f496451b1e482e, type: 3}
 --- !u!1 &296879203
@@ -4302,7 +4306,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 0703597064ba6cc4da5dad7b23d7e83e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.29411766}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

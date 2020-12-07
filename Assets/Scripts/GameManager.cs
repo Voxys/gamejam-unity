@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject CoinUI_Text;
     public GameObject PotionUI_Text;
     public GameObject PotionForceUI_Text;
+    public Vector3 DungeonSpawnPosition;
+    public Vector3 WorldMapSpawnPosition;
 
     public GameObject BackpackUI;
     public GameObject BackpackImage;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(CompleteUI);
+        DontDestroyOnLoad(WorldPlayer);
     }
 
     void Start()
@@ -50,6 +53,9 @@ public class GameManager : MonoBehaviour
         PotionAmount = 0;
         PotionForceAmount = 0;
         ExtraDamage = 8;
+
+        DungeonSpawnPosition = new Vector3(10f, 2.8f, 0);
+        WorldMapSpawnPosition = new Vector3(35.5f, 31.5f, 0);
 
         HealthUI_Text.GetComponent<Text>().text = PlayerHealth.ToString();
         CoinUI_Text.GetComponent<Text>().text = GoldAmount.ToString();

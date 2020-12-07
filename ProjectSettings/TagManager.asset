@@ -26,6 +26,7 @@ TagManager:
   - Despawn
   - Checkpoint1
   - Checkpoint2
+  - King
   layers:
   - Default
   - TransparentFX
@@ -80,4 +81,7 @@ TagManager:
     locked: 0
   - name: Effect
     uniqueID: 2974474581
+    locked: 0
+  - name: MapDecoration
+    uniqueID: 2070785615
     locked: 0

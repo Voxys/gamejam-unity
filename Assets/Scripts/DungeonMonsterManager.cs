@@ -14,7 +14,7 @@ public class DungeonMonsterManager : MonoBehaviour
     void Start()
     {
         Sound = GetComponent<AudioSource>();
-        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindWithTag("King").GetComponent<Transform>();
     }
 
     void Update()

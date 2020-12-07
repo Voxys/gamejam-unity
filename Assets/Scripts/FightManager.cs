@@ -116,6 +116,7 @@ public class FightManager : MonoBehaviour
         // retour au début
 
         SceneManager.LoadScene("WorldMapWithoutGameManager&UI");
+        GameManager.Instance.WorldPlayer.transform.position = GameManager.Instance.WorldMapSpawnPosition;
         GameManager.Instance.ActivateUI();
         GameManager.Instance.SetPotionForceUsedFalse();
     }

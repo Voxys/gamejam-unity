@@ -21,6 +21,7 @@ public class ButtonSelectorEndMenu : MonoBehaviour
 	void Retry()
 	{
 		SceneManager.LoadScene("Menu");
+		GameManager.Instance.GameRestarted();
 	}
 	
 	void Quit()

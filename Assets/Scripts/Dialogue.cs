@@ -23,6 +23,7 @@ public class Dialogue : MonoBehaviour
         Dialogue2.SetActive(false);
         ImagePotion.SetActive(false);
         ImagePotionForce.SetActive(false);
+        
 
         if (ImagePotion == null)
             ImagePotion = new GameObject();
@@ -33,6 +34,8 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
+        GotBackPack = GameManager.Instance.GetGotBackPack();
+
         if (Input.GetKeyDown(KeyCode.E) && CollideWithPnj && !gameObject.CompareTag("Marchande"))
         {
             CanvasDialogue.SetActive(true);
@@ -86,7 +89,7 @@ public class Dialogue : MonoBehaviour
 
             if (!GotBackPack)
             {
-                GotBackPack = true;
+                GameManager.Instance.SetGotBackPackTrue();
                 GameManager.Instance.GiveBackpack();
             }
         }
@@ -100,7 +103,14 @@ public class Dialogue : MonoBehaviour
 
     public void GestionMarchande()
     {
-        compteurDialogue++;
+        if (!GotBackPack)
+        {
+            Dialogue2.SetActive(true);
+            return;
+        }
+
+
+            compteurDialogue++;
 
         if (compteurDialogue == 1)
         {

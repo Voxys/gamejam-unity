@@ -43,7 +43,7 @@ public class EnterHouses : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Dungeon_Entrance"))
         {
-            SceneManager.LoadSceneAsync("Dungeon");
+            SceneManager.LoadScene("Dungeon");
             GameManager.Instance.WorldPlayer.transform.position = GameManager.Instance.DungeonSpawnPosition;
         }
 

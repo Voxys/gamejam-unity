@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 121492048}
   - component: {fileID: 121492047}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: PotionForce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,12 +445,13 @@ RectTransform:
   m_Children:
   - {fileID: 1776989937}
   - {fileID: 880405103}
+  - {fileID: 1114947930}
   m_Father: {fileID: 1024184629}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.6, y: 1.7}
+  m_AnchoredPosition: {x: 39.7, y: 16.1}
   m_SizeDelta: {x: 22.148941, y: 36.100334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121492047
@@ -753,7 +754,6 @@ MonoBehaviour:
   ImagePotionForce: {fileID: 121492045}
   CollideWithPnj: 0
   compteurDialogue: 0
-  GotBackPack: 0
 --- !u!58 &136079331
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -926,6 +926,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &161244109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161244110}
+  - component: {fileID: 161244112}
+  - component: {fileID: 161244111}
+  m_Layer: 5
+  m_Name: TextPotionVie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &161244110
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161244109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 163335462}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 42, y: -58.23}
+  m_SizeDelta: {x: 160, y: 61.667946}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &161244111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161244109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ' Potion de vie
+
+    (soigne 20pdv)'
+--- !u!222 &161244112
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161244109}
+  m_CullTransparentMesh: 0
 --- !u!1 &163335461
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +1019,7 @@ GameObject:
   - component: {fileID: 163335464}
   - component: {fileID: 163335463}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PotionHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -957,12 +1038,13 @@ RectTransform:
   m_Children:
   - {fileID: 562431747}
   - {fileID: 575769132}
+  - {fileID: 161244110}
   m_Father: {fileID: 1024184629}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.3, y: 1.9}
+  m_AnchoredPosition: {x: -60.100002, y: 16.300003}
   m_SizeDelta: {x: 54.080643, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163335463
@@ -4827,7 +4909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.7, y: 20.7}
+  m_AnchoredPosition: {x: 17.399998, y: 20.7}
   m_SizeDelta: {x: 19.54042, y: 19.54042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880405104
@@ -6069,6 +6151,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7610692940768127254, guid: cfdd8160557e84b4c89295fea4b617e0, type: 3}
   m_PrefabInstance: {fileID: 1114844024}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1114947929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114947930}
+  - component: {fileID: 1114947932}
+  - component: {fileID: 1114947931}
+  m_Layer: 5
+  m_Name: TextPotionForce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1114947930
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114947929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 121492046}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38.8, y: -58.029995}
+  m_SizeDelta: {x: 160, y: 61.667946}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1114947931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114947929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: " Potion de force\n(dur\xE9e 1combat)"
+--- !u!222 &1114947932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114947929}
+  m_CullTransparentMesh: 0
 --- !u!1 &1116059197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7659,7 +7820,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3077628530234562986, guid: 67a57d638213b7d448087c7a91af3c53, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7667,7 +7828,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1500303075
@@ -7697,7 +7858,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010906041, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7708,7 +7869,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.374237, y: 0.32}
   m_EdgeRadius: 0
 --- !u!1 &1508208331
 GameObject:
@@ -8837,7 +8998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.400003, y: 0.000011563301}
+  m_AnchoredPosition: {x: -1.9000006, y: 0.000011563301}
   m_SizeDelta: {x: 54.08049, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1776989938
@@ -8945,7 +9106,7 @@ GameObject:
   - component: {fileID: 1787389930}
   - component: {fileID: 1787389929}
   m_Layer: 5
-  m_Name: Dialogue2
+  m_Name: DialogueNoBackpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9003,7 +9164,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "Rends-toi \xE0 la maison au-dessus des escalier \xE0 l'ouest et r\xE9cup\xE9re
+    ton sac avant de pouvoir acheter des objets!"
 --- !u!222 &1787389930
 CanvasRenderer:
   m_ObjectHideFlags: 0

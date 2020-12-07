@@ -41,6 +41,8 @@ public class PlayerDungeon : MonoBehaviour
             GameManager.Instance.SetActiveScene(SceneManager.GetActiveScene());
             SceneManager.LoadScene("FightScene");
             GameManager.Instance.HideUI();
+            GameManager.Instance.WorldPlayer.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            GameManager.Instance.WorldPlayer.GetComponent<PlayerMovement>().enabled = false;
         }
     }
 

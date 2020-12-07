@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public bool HasEnteredDungeon;
     public static bool PotionForceUsed;
+    public static bool GotBackpack;
 
     public static Scene SceneActive;
     public static string scene;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerHealth = 100;
-        GoldAmount = 100;
+        GoldAmount = 50;
         PotionAmount = 0;
         PotionForceAmount = 0;
         ExtraDamage = 8;
@@ -65,11 +66,6 @@ public class GameManager : MonoBehaviour
         BackpackUI.SetActive(false);
         PotionButton_Backpack.SetActive(false);
         BackpackImage.SetActive(false);
-
-
-
-
-        Debug.Log("ok" + this.gameObject);
     }
 
 
@@ -95,6 +91,15 @@ public class GameManager : MonoBehaviour
     }
 
     //----------------------------------//
+
+    public void GameRestarted()
+    {
+        Destroy(this.gameObject);
+        Destroy(CompleteUI);
+        Destroy(WorldPlayer);
+        SetGotBackPackFalse();
+    }
+
 
 
     public int GetPlayerHealth()
@@ -180,6 +185,23 @@ public class GameManager : MonoBehaviour
     {
         return NumberOfVisitedRoom;
     }
+    //----------------------------------//
+    
+    public bool GetGotBackPack()
+    {
+        return GotBackpack;
+    }
+
+    public void SetGotBackPackTrue()
+    {
+        GotBackpack = true;
+    }
+
+    public void SetGotBackPackFalse()
+    {
+        GotBackpack = false;
+    }
+
 
     //----------------------------------//
 

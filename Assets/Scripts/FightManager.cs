@@ -93,6 +93,7 @@ public class FightManager : MonoBehaviour
             menuWin.SetActive(true);
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Dungeon");
+            GameManager.Instance.WorldPlayer.GetComponent<PlayerMovement>().enabled = true;
             GameManager.Instance.ActivateUI();
             GameManager.Instance.IncrementKillCounter();
             GameManager.Instance.IncrementGoldAmount(25);
@@ -119,6 +120,8 @@ public class FightManager : MonoBehaviour
         GameManager.Instance.WorldPlayer.transform.position = GameManager.Instance.WorldMapSpawnPosition;
         GameManager.Instance.ActivateUI();
         GameManager.Instance.SetPotionForceUsedFalse();
+        GameManager.Instance.WorldPlayer.GetComponent<PlayerMovement>().enabled = true;
+
     }
 
 }

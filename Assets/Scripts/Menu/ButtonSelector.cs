@@ -8,9 +8,11 @@ public class ButtonSelector : MonoBehaviour
 {
 	public Button PlayBtn;
 	public Button StoryBtn;
+	public GameObject StoryWindow;
 
 	void Start()
 	{
+		StoryWindow.SetActive(false);
 		Button btnPlay = PlayBtn.GetComponent<Button>();
 		Button btnStory = StoryBtn.GetComponent<Button>();
 
@@ -18,13 +20,18 @@ public class ButtonSelector : MonoBehaviour
 		btnStory.onClick.AddListener(Story);
 	}
 
-	void Play()
+	public void Play()
 	{
 		SceneManager.LoadScene("StartScene");
 	}
 
-	void Story()
+	public void Story()
     {
-		Debug.Log("story");
+		StoryWindow.SetActive(true);
     }
+
+	public void CloseStory()
+	{ 
+		StoryWindow.SetActive(false);
+	}
 }
